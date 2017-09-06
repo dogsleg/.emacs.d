@@ -889,7 +889,7 @@
     (setq mu4e-sent-folder "/sent"                ;; Put sent messages to /sent in my maildir
           mu4e-drafts-folder "/drafts"            ;; Put drafts to /drafts in my maildir
           mu4e-trash-folder "/trash"              ;; Put deleted (but not fully removed) messages to /trash in my maildir
-          mu4e-attachment-dir "~/Downloads"       ;; Exctract attachments to ~/Downloads
+          mu4e-attachment-dir "~/Downloads"       ;; Extract attachments to ~/Downloads
           mu4e-hide-index-messages t
           mu4e-get-mail-command "fetchmail"       ;; Run `fetchmail' to get my mail
           mu4e-update-interval 1200               ;; Fetch messages and update database every 1200 seconds
