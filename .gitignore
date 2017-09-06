@@ -1,0 +1,12 @@
+# Ignore everything
+/*
+
+# But not these files...
+!.gitignore
+!init.el
+!custom.el
+
+# Ignore everything in eshell/, but not eshell/alias
+!/eshell
+/eshell/*
+!/eshell/alias
