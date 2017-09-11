@@ -210,9 +210,6 @@
 ;; Use clipboard to copy/paste
 (setq x-select-enable-clipboard t)
 
-;; Set start of week to Monday
-(setq calendar-week-start-day 1)
-
 ;; Do not put double space between sentences
 (setq sentence-end-double-space nil)
 
@@ -227,6 +224,34 @@
 
 ;; Don't spawn a dialog box when clicking on buttons or links
 (setq use-dialog-box nil)
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                  ;;;;
+;;;; === CALENDAR === ;;;;
+;;;;                  ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Set start of week to Monday
+(setq calendar-week-start-day 1)
+
+;; Use Russian words for week days
+(setq calendar-day-name-array ["Воскресенье" "Понедельник" "Вторник" "Среда"
+                               "Четверг" "Пятница" "Суббота"])
+
+;; Use Russian words for months
+(setq calendar-month-name-array ["Январь" "Февраль" "Март" "Апрель" "Май"
+                                 "Июнь" "Июль" "Август" "Сентябрь"
+                                 "Октябрь" "Ноябрь" "Декабрь"])
+
+;; Use Russian words for seasons
+(setq solar-n-hemi-seasons
+      '("Весна" "Лето" "Осень" "Зима"))
+
+;; Disable holidays that are not relevant for me
+(setq holiday-oriental-holidays nil
+      holiday-bahai-holidays nil
+      holiday-islamic-holidays nil
+      holiday-hebrew-holidays nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                           ;;;;
