@@ -1197,6 +1197,15 @@ See `sort-regexp-fields'."
 (add-hook 'elfeed-search-mode-hook
           'no-trailing-whitespace)
 
+;;;;;;;;;;;;;;;;;;;;;;;
+;;;;               ;;;;
+;;;; === ELISP === ;;;;
+;;;;               ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Cask files are also Emacs Lisp files
+(add-to-list 'auto-mode-alist '("Cask\\'" . emacs-lisp-mode))
+
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
 ;;;; === PERL === ;;;;
