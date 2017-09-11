@@ -885,6 +885,12 @@
 (add-hook 'eshell-mode-hook 'eldoc-mode)
 (add-hook 'emacs-lisp-mode-hook 'eldoc-mode)
 
+;; Show eldoc output faster
+(setq eldoc-idle-delay 0.1)
+
+;; Don't allow eldoc to resize eacho area display
+(setq eldoc-echo-area-use-multiline-p nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                       ;;;;
 ;;;; === HUNGRY-DELETE === ;;;;
