@@ -372,6 +372,9 @@
 ;; Set SSH as a default method for TRAMP
 (setq tramp-default-method "ssh")
 
+;; Store backup files locally, not remotely
+(setq tramp-backup-directory-alist backup-directory-alist)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
 ;;;; === WITH-EDITOR === ;;;;
