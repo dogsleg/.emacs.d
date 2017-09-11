@@ -225,6 +225,23 @@
 ;; Enable winner-mode
 (winner-mode 1)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                           ;;;;
+;;;; === BACKUP & AUTOSAVE === ;;;;
+;;;;                           ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Put backup files to a special directory
+(setq backup-directory-alist '((".*" . "~/.emacs.d/backup")))
+
+;; Use version for backup files and delete old versions
+(setq version-control t)
+(setq delete-old-versions t)
+
+;; Put autosave files to a special directory
+(setq auto-save-list-file-prefix "~/.emacs.d/autosave/")
+(setq auto-save-file-name-transforms '((".*" "~/.emacs.d/autosave/" t)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === IDENT === ;;;;
