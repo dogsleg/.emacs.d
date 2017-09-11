@@ -225,6 +225,9 @@
 ;; Enable winner-mode
 (winner-mode 1)
 
+;; Don't spawn a dialog box when clicking on buttons or links
+(setq use-dialog-box nil)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                           ;;;;
 ;;;; === BACKUP & AUTOSAVE === ;;;;
