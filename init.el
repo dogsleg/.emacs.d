@@ -522,6 +522,15 @@
   ;; Use default powerline theme
   (powerline-default-theme))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                   ;;;;
+;;;; === EYEBROWSE === ;;;;
+;;;;                   ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Enable eyebrowse
+(eyebrowse-mode t)
+
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
 ;;;; === ANZU === ;;;;
