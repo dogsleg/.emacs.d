@@ -388,6 +388,12 @@
   ;; Do not ignore case
   (setq eshell-up-ignore-case nil))
 
+;; Load esh-help
+(use-package esh-help
+  :config
+  ;; Use eldoc in eshell
+  (setup-esh-help-eldoc))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === TRAMP === ;;;;
