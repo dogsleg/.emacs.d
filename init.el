@@ -807,6 +807,7 @@
          "http://feeds.feedburner.com/linuxfaq?format=xml"
          "https://opensource.com/feed"
          "http://slashdot.org/index.rss"
+         "http://planet.fsfe.org/en/rss20.xml"
          ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
