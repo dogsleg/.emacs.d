@@ -483,7 +483,7 @@
   (setq ido-vertical-define-keys 'C-n-and-C-p-only))
 
 ;; Load ido-ubiquitous
-(use-package ido-ubiquitous
+(use-package ido-completing-read+
   :config
   (ido-ubiquitous-mode 1))
 
