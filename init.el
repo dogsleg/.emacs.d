@@ -946,6 +946,15 @@
 
 (pdf-tools-install)
 
+;;;;;;;;;;;;;;;;;;;;;
+;;;;             ;;;;
+;;;; === NOV === ;;;;
+;;;;             ;;;;
+;;;;;;;;;;;;;;;;;;;;;
+
+;; Associate EPUB files with nov-mode
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
+
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
 ;;;; === MU4E === ;;;;
