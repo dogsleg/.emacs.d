@@ -1003,6 +1003,8 @@
          ;; Messages from mailing lists go to their corresponding directories
          ((string-match "debian-devel-announce.lists.debian.org" (mu4e-message-field msg :mailing-list))
           "/mailing-lists/d-devel-announce")
+         ((string-match "debian-devel.lists.debian.org" (mu4e-message-field msg :mailing-list))
+          "/mailing-lists/d-devel")
          ((string-match "debian-haskell.lists.debian.org" (mu4e-message-field msg :mailing-list))
           "/mailing-lists/d-haskell")
          ((string-match "debian-i18n.lists.debian.org" (mu4e-message-field msg :mailing-list))
@@ -1017,6 +1019,8 @@
           "/mailing-lists/d-private")
          ((string-match "debian-project.lists.debian.org" (mu4e-message-field msg :mailing-list))
           "/mailing-lists/d-project")
+         ((string-match "debian-www.lists.debian.org" (mu4e-message-field msg :mailing-list))
+          "/mailing-lists/d-www")
          ((string-match "debconf-discuss.lists.debconf.org\\|debconf-announce.lists.debconf.org" (mu4e-message-field msg :mailing-list))
           "/mailing-lists/debconf")
          ((string-match "pkg-emacsen-addons.lists.alioth.debian.org\\|debian-emacsen.lists.debian.org" (mu4e-message-field msg :mailing-list))
