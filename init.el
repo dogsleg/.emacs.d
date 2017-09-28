@@ -955,6 +955,9 @@
 ;; Associate EPUB files with nov-mode
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
+;; Set width of text in nov-mode to 80 characters
+(setq nov-text-width 80)
+
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
 ;;;; === MU4E === ;;;;
