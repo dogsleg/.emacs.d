@@ -870,6 +870,11 @@
                "* %(org-contacts-template-name)
 :PROPERTIES:
 :EMAIL: %(org-contacts-template-email)
+:PHONE:
+:ALIAS:
+:NICKNAME:
+:ADDRESS:
+:BIRTHDAY:
 :END:"))
 
 ;;;;;;;;;;;;;;;;;;;;;;;
