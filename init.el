@@ -861,6 +861,17 @@
   ;; Use these cool bullets to mark levels
   (setq org-bullets-bullet-list '("⊢" "⋮" "⋱" "⸳")))
 
+;; Enable org-contacts
+(use-package org-contacts)
+
+;; Add org-contacts to org-capture
+(add-to-list 'org-capture-templates
+             '("c" "Contacts" entry (file "~/Org/contacts.org")
+               "* %(org-contacts-template-name)
+:PROPERTIES:
+:EMAIL: %(org-contacts-template-email)
+:END:"))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === DIRED === ;;;;
