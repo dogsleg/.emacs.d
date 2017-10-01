@@ -866,7 +866,7 @@
 
 ;; Add org-contacts to org-capture
 (add-to-list 'org-capture-templates
-             '("c" "Contacts" entry (file "~/Org/contacts.org")
+             '("c" "Contacts" entry (file "~/freedom/!org!/contacts.org")
                "* %(org-contacts-template-name)
 :PROPERTIES:
 :EMAIL: %(org-contacts-template-email)
