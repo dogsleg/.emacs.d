@@ -1059,6 +1059,9 @@
 (setq message-citation-line-format "%a %d %b %Y @ %R %f:\n")
 (setq message-citation-line-function 'message-insert-formatted-citation-line)
 
+;; Load mu4e-header to silent errors related to mu4e-headers-actions
+(use-package mu4e-headers)
+
 ;; Add org-contacts support to mu4e
 (use-package mu4e-actions
   :config
