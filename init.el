@@ -871,7 +871,6 @@
 :PROPERTIES:
 :EMAIL: %(org-contacts-template-email)
 :PHONE:
-:ALIAS:
 :NICKNAME:
 :ADDRESS:
 :BIRTHDAY:
