@@ -1058,6 +1058,13 @@
 (setq message-citation-line-format "%a %d %b %Y @ %R %f:\n")
 (setq message-citation-line-function 'message-insert-formatted-citation-line)
 
+;; Add org-contacts support to mu4e
+(setq mu4e-org-contacts-file  "~/freedom/!org!/contacts.org")
+(add-to-list 'mu4e-headers-actions
+             '("org-contact-add" . mu4e-action-add-org-contact) t)
+(add-to-list 'mu4e-view-actions
+             '("org-contact-add" . mu4e-action-add-org-contact) t)
+
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
 ;;;; === SMTP === ;;;;
