@@ -1055,6 +1055,7 @@
          ;; Everything else goes to /archive
          (t "/archive"))))
 
+;; Define citation format
 (setq message-citation-line-format "%a %d %b %Y @ %R %f:\n")
 (setq message-citation-line-function 'message-insert-formatted-citation-line)
 
