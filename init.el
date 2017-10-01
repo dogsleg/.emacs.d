@@ -1060,11 +1060,13 @@
 (setq message-citation-line-function 'message-insert-formatted-citation-line)
 
 ;; Add org-contacts support to mu4e
-(setq mu4e-org-contacts-file  "~/freedom/!org!/contacts.org")
-(add-to-list 'mu4e-headers-actions
-             '("org-contact-add" . mu4e-action-add-org-contact) t)
-(add-to-list 'mu4e-view-actions
-             '("org-contact-add" . mu4e-action-add-org-contact) t)
+(use-package mu4e-actions
+  :config
+  (setq mu4e-org-contacts-file  "~/freedom/!org!/contacts.org")
+  (add-to-list 'mu4e-headers-actions
+               '("org-contact-add" . mu4e-action-add-org-contact) t)
+  (add-to-list 'mu4e-view-actions
+               '("org-contact-add" . mu4e-action-add-org-contact) t))
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
