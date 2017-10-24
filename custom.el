@@ -5,7 +5,7 @@
  ;; If there is more than one, they won't work right.
  '(custom-safe-themes
    (quote
-    ("e9df267a1c808451735f2958730a30892d9a2ad6879fb2ae0b939a29ebf31b63" "688b48752d2002324e8b2e3bdea2bee536a18b4111a8dcdacb5ec193fd3a3654" "97bd701d278f6e103fe0cbe2114f779b75c3f17d04b856811f47376accce7c7f" default)))
+    ("3f4ce0c77e72f5448039d25c095a4b1b1c0c82598104ad5336d07f9526d58628" "e9df267a1c808451735f2958730a30892d9a2ad6879fb2ae0b939a29ebf31b63" "688b48752d2002324e8b2e3bdea2bee536a18b4111a8dcdacb5ec193fd3a3654" "97bd701d278f6e103fe0cbe2114f779b75c3f17d04b856811f47376accce7c7f" default)))
  '(org-agenda-files (quote ("~/freedom/!org!/general.org")))
  '(package-selected-packages
    (quote
