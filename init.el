@@ -339,6 +339,18 @@
   (setq font-lock-maximum-decoration t)
   (global-font-lock-mode t))
 
+;;;;;;;;;;;;;;;;;;;;;;;
+;;;;               ;;;;
+;;;; === ASYNC === ;;;;
+;;;;               ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Load async
+(use-package async
+  :config
+  ;; Enable asynchronous compilation
+  (async-bytecomp-package-mode 1))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                  ;;;;
 ;;;; === BIND-KEY === ;;;;
@@ -882,6 +894,10 @@
 ;;;;               ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Enable async in dired
+(autoload 'dired-async-mode "dired-async.el" nil t)
+(dired-async-mode 1)
+
 ;; Set format of ls output for dired
 (setq dired-listing-switches "-lGha --group-directories-first")
 
@@ -1079,14 +1095,15 @@
 
 (use-package smtpmail)
 
-(setq message-send-mail-function 'smtpmail-send-it
-      smtpmail-stream-type 'ssl
+
+(setq message-send-mail-function 'async-smtpmail-send-it             ;; Send mails asynchronously
+      smtpmail-stream-type 'ssl                                      ;; Use ssl
       smtpmail-smtp-user "dogsleg"
-      smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
+      smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg") ;; Load credentials from an encrypted file
       smtpmail-default-smtp-server "mail.riseup.net"
       smtpmail-smtp-server "mail.riseup.net"
       smtpmail-smtp-service 465
-      smtpmail-debug-info t)
+      smtpmail-debug-info t)                                         ;; Enable debugging
 
 ;; Don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
