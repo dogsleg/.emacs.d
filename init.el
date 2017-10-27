@@ -909,8 +909,7 @@
 
 ;; Define programs to open specific files
 (setq dired-open-extensions
-      '(("pdf" . "zathura")
-        ("djvu" . "zathura")
+      '(("djvu" . "zathura")
         ("mkv" . "mplayer")
         ("avi" . "mplayer")))
 
