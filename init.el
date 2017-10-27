@@ -1092,8 +1092,7 @@
 ;;;;              ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package smtpmail)
-
+(use-package smtpmail-async)
 
 (setq message-send-mail-function 'async-smtpmail-send-it             ;; Send mails asynchronously
       smtpmail-stream-type 'ssl                                      ;; Use ssl
