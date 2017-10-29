@@ -1377,4 +1377,3 @@ See `sort-regexp-fields'."
 (pymacs-load "ropemacs" "rope-")
 
 ;;; init.el ends here
-(put 'dired-find-alternate-file 'disabled nil)
