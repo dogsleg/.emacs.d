@@ -974,7 +974,15 @@
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(pdf-tools-install)
+(use-package pdf-tools
+  :config
+  (pdf-tools-install)
+  ;; Open PDF files scaled to fit page
+  (setq-default pdf-view-display-size 'fit-page)
+  ;; Automatically annotate highlights
+  (setq pdf-annot-activate-created-annotations t)
+  ;; Use ordinary isearch
+  :bind ("C-s" . isearch-forward))
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;             ;;;;
