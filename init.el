@@ -123,7 +123,7 @@
 
 ;; Define function to open URL in EWW or to xdg-open it
 (defun gk-browse-url (&rest args)
-  "Prompt for whether or not to browse with EWW, if no browse with external browser."
+  "Prompt for whether or not to browse with EWW, if no browse with external browser, pass ARGS."
   (apply
    (if (y-or-n-p "Browse with EWW? ")
        'eww-browse-url
@@ -651,7 +651,7 @@
 
 ;; Define hydra to hydra-change transparency of Emacs window
 (defun hydra-transparency-helper (inc)
-  "Increase or decrease the selected frame transparency"
+  "Increase or decrease the selected frame transparency for INC value."
   (let* ((alpha (frame-parameter (selected-frame) 'alpha))
          (next-alpha (cond ((not alpha) 100)
                            ((> (- alpha inc) 100) 100)
@@ -1136,10 +1136,12 @@
 ;;;;                     ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Bind a key to kill the current buffer
 (defun kill-current-buffer ()
+  "Function to kill the current buffer."
   (interactive)
   (kill-buffer (current-buffer)))
+
+;; Bind a key to kill the current buffer
 (bind-key "C-x C-k" 'kill-current-buffer)
 
 ;; Bind a key to check the current buffer with flyspell
@@ -1155,6 +1157,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun autocompile nil
+  "Autocompile function."
   (interactive)
   (require 'bytecomp)
   (if (string= (buffer-file-name) (expand-file-name (concat
@@ -1169,8 +1172,8 @@
 ;;;;                     ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Define a function to insert Lorem ipsum filling text
 (defun lorem ()
+  "Insert Lorem ipsum filling text."
   (interactive)
   (insert "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do "
           "eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim"
@@ -1186,8 +1189,8 @@
 ;;;;                     ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Define a function to insert current date and time
 (defun insert-date ()
+  "Insert current date and time."
   (interactive)
   (insert (format-time-string "%c" (current-time))))
 
@@ -1197,14 +1200,14 @@
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Split vertically and switch to other buffer
 (defun vsplit-switch ()
+  "Split vertically and switch to other buffer."
   (interactive)
   (split-window-vertically)
   (other-window 1 nil))
 
-;; Split horisontally and switch to other buffer
 (defun hsplit-switch ()
+  "Split horisontally and switch to other buffer."
   (interactive)
   (split-window-horizontally)
   (other-window 1 nil))
@@ -1221,6 +1224,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun align-equals (begin end)
+  "Align equal symbols from BEGIN to END."
   (interactive r)
   (align-regexp begin end "\\(\\s-*\\)=" 1 1))
 
@@ -1232,8 +1236,8 @@
 ;;;;                    ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(defun sort-words (reverse beg end)
-  "Sort words in region alphabetically, in REVERSE if negative.
+(defun sort-words (reverse begin end)
+  "Sort words in region alphabetically, in REVERSE if negative, BEGIN to END.
 Prefixed with negative \\[universal-argument], sorts in reverse.
 
 The variable `sort-fold-case' determines whether alphabetic case
@@ -1241,7 +1245,7 @@ affects the sort order.
 
 See `sort-regexp-fields'."
   (interactive "*P\nr")
-  (sort-regexp-fields reverse "\\w+" "\\&" beg end))
+  (sort-regexp-fields reverse "\\w+" "\\&" begin end))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                    ;;;;
@@ -1259,9 +1263,9 @@ See `sort-regexp-fields'."
 ;; Show trailing whitespaces
 (setq-default show-trailing-whitespace t)
 
-;; Don't show trailing whitespace in some modes
 (defun no-trailing-whitespace ()
-    (setq show-trailing-whitespace nil))
+  "Don't show trailing whitespace in some modes."
+  (setq show-trailing-whitespace nil))
 
 (add-hook 'minibuffer-setup-hook
           'no-trailing-whitespace)
@@ -1298,8 +1302,8 @@ See `sort-regexp-fields'."
 ;; Use cperl-mode instead of perl-mode
 (defalias 'perl-mode 'cperl-mode)
 
-;; Configure cperl-mode
 (defun pde-perl-mode-hook ()
+  "Configure cperl."
   (abbrev-mode t)
   (add-to-list 'cperl-style-alist
                '("PDE"
@@ -1319,7 +1323,7 @@ See `sort-regexp-fields'."
 
 ;; Make eldoc and cperl-mode friends
 (defun my-cperl-eldoc-documentation-function ()
-  "Return meaningful doc string for eldoc-mode."
+  "Return meaningful doc string for eldoc."
   (car
    (let ((cperl-message-on-help-error nil))
      (cperl-get-help))))
