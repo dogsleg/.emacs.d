@@ -980,12 +980,18 @@
   (setq-default pdf-view-display-size 'fit-page)
   ;; Automatically annotate highlights
   (setq pdf-annot-activate-created-annotations t)
+  (setq TeX-view-program-selection '((output-pdf "pdf-tools")))
+  (setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view")))
   ;; Use ordinary isearch
   :bind ("C-s" . isearch-forward))
 
 (pdf-tools-install)
 
+;; Disable linum-mode in pdf-tools-mode
 (add-hook 'pdf-view-mode-hook (lambda () (linum-mode -1)))
+
+;; Revert PDF buffer after successful compilation of TeX file
+(add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;             ;;;;
