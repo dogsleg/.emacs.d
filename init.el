@@ -993,6 +993,16 @@
 ;; Revert PDF buffer after successful compilation of TeX file
 (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
 
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                ;;;;
+;;;; === AUCTEX === ;;;;
+;;;;                ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;             ;;;;
 ;;;; === NOV === ;;;;
