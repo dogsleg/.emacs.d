@@ -978,6 +978,8 @@
   :config
   ;; Open PDF files scaled to fit page
   (setq-default pdf-view-display-size 'fit-page)
+  ;; Better zooming
+  (setq pdf-view-resize-factor 1.1)
   ;; Automatically annotate highlights
   (setq pdf-annot-activate-created-annotations t)
   (setq TeX-view-program-selection '((output-pdf "pdf-tools")))
