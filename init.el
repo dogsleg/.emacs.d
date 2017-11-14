@@ -406,6 +406,12 @@
   ;; Use eldoc in eshell
   (setup-esh-help-eldoc))
 
+;; Load eshell-bookmark
+(use-package eshell-bookmark
+  :config
+  ;; Integrate bookmark support to Eshell
+  (add-hook 'eshell-mode-hook 'eshell-bookmark-setup))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === TRAMP === ;;;;
