@@ -900,6 +900,9 @@
 ;;;;               ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Enable dired-find-alternate-file for all sessions
+(put 'dired-find-alternate-file 'disabled nil)
+
 ;; Enable async in dired
 (autoload 'dired-async-mode "dired-async.el" nil t)
 (dired-async-mode 1)
