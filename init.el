@@ -132,6 +132,9 @@
 
 (setq browse-url-browser-function #'gk-browse-url)
 
+;; Disable linum-mode in EWW
+(add-hook 'eww-after-render-hook (lambda () (linum-mode -1)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
 ;;;; === UI and MISC === ;;;;
