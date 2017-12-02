@@ -1081,6 +1081,7 @@
          ;; Messages to root@localhost go to /local directory
          ((mu4e-message-contact-field-matches msg :to "root@localhost")
           "/local")
+         ;; Messages from owner@bugs.debian.org go to /bugs directory
          ((mu4e-message-contact-field-matches msg :from "owner@bugs.debian.org")
           "/bugs")
          ;; Messages from mailing lists go to their corresponding directories
