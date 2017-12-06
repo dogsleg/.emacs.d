@@ -826,7 +826,6 @@
          "http://lwn.net/headlines/rss"
          "https://yakking.branchable.com/blog/index.rss"
          "http://feeds.feedburner.com/Phoronix"
-         "http://feeds.feedburner.com/linuxfaq?format=xml"
          "https://opensource.com/feed"
          "http://slashdot.org/index.rss"
          "http://planet.fsfe.org/en/rss20.xml"
