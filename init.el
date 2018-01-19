@@ -1149,6 +1149,22 @@
 ;; Don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                   ;;;;
+;;;; === DUMB-JUMP === ;;;;
+;;;;                   ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Load dumb-jump
+(use-package dumb-jump
+  :config
+  ;; Enable dumb-jump
+  (dumb-jump-mode)
+  ;; Make dumb-jump silent
+  (setq dumb-jump-quiet t)
+  ;; Prefer ag
+  (setq dumb-jump-prefer-searcher 'ag))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                  ;;;;
 ;;;; === DIMINISH === ;;;;
