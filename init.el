@@ -1347,6 +1347,16 @@ See `sort-regexp-fields'."
 ;; Cask files are also Emacs Lisp files
 (add-to-list 'auto-mode-alist '("Cask\\'" . emacs-lisp-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                ;;;;
+;;;; === PROLOG === ;;;;
+;;;;                ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Load ediprolog
+(use-package ediprolog
+  :bind ("<f11>" . ediprolog-dwim))
+
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
 ;;;; === PERL === ;;;;
