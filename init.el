@@ -368,6 +368,18 @@
   ;; Use C-h B to show a list of user-defined bindings
   :bind ("C-h B" . describe-personal-keybindings))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                          ;;;;
+;;;; === BROWSE-KILL-RING === ;;;;
+;;;;                          ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Load browse-kill-ring
+(use-package browse-kill-ring
+  ;; Set up default keybindings
+  :config (browse-kill-ring-default-keybindings))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
 ;;;; === ESHELL === ;;;;
