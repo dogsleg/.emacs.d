@@ -380,6 +380,7 @@
   :config (browse-kill-ring-default-keybindings))
 
 
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
 ;;;; === ESHELL === ;;;;
@@ -771,11 +772,11 @@
 (add-hook 'emacs-lisp-mode-hook 'enable-paredit-mode)
 (add-hook 'lisp-mode-hook 'enable-paredit-mode)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;                                   ;;;;
-;;;; === AVY, ACE-LINK, ACE-WINDOW === ;;;;
-;;;;                                   ;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                                                   ;;;;
+;;;; === AVY, ACE-LINK, ACE-WINDOW, ACE-POPUP-MENU === ;;;;
+;;;;                                                   ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Load avy
 (use-package avy
@@ -798,6 +799,10 @@
 (use-package ace-window
   ;; Bind a key to change windows with ace-window
   :bind ("M-g z" . ace-window))
+
+;; Load ace-popup-menu
+(use-package ace-popup-menu
+  :config (ace-popup-menu-mode 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
