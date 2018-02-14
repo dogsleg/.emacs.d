@@ -379,7 +379,15 @@
   ;; Set up default keybindings
   :config (browse-kill-ring-default-keybindings))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                  ;;;;
+;;;; === BEGINEND === ;;;;
+;;;;                  ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Load beginend
+(use-package beginend
+  :config (beginend-global-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
