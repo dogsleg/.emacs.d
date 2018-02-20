@@ -387,7 +387,8 @@
 
 ;; Load beginend
 (use-package beginend
-  :config (beginend-global-mode))
+  :config (beginend-global-mode)
+  :diminish (beginend-global-mode beginend-prog-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
