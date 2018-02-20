@@ -41,7 +41,7 @@
 
 (add-hook 'after-init-hook #'(lambda ()
                                ;; restore after startup
-                               (setq gc-cons-threshold 8388608
+                               (setq gc-cons-threshold 33554432
                                      gc-cons-percentage 0.1)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -845,6 +845,7 @@
       '( ("http://planet.debian.org/rss20.xml" debian)
          ("http://www.debian.org/News/news" debian)
          ("http://www.debian.org/security/dsa.en.rdf" debian)
+         ("https://micronews.debian.org/feeds/feed.rss" debian)
          ("http://planet.emacsen.org/atom.xml" emacs)
          ("http://www.opennet.ru/opennews/opennews_all.rss" ru-foss)
          ("http://feeds.feedburner.com/org/LOR" ru-foss)
