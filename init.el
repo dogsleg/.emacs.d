@@ -1070,8 +1070,8 @@
 (use-package notmuch)
 
 ;; Define saved searches
-(setq notmuch-saved-searches '((:name "inbox" :query "tag:inbox")
-                               (:name "unread" :query "tag:inbox AND tag:unread")
+(setq notmuch-saved-searches '((:name "unread" :query "tag:inbox AND tag:unread")
+                               (:name "inbox" :query "tag:inbox")
                                (:name "local" :query "tag:local")
                                (:name "debian-mailing-lists" :query "to:lists.debian.org")
                                (:name "bugs" :query "tag:bugs")))
