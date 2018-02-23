@@ -388,7 +388,7 @@
 ;; Load beginend
 (use-package beginend
   :config (beginend-global-mode)
-  :diminish (beginend-global-mode beginend-prog-mode))
+  :diminish (beginend-global-mode beginend-prog-mode beginend-magit-status-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
@@ -1060,104 +1060,47 @@
 ;; Set width of text in nov-mode to 80 characters
 (setq nov-text-width 80)
 
-;;;;;;;;;;;;;;;;;;;;;;
-;;;;              ;;;;
-;;;; === MU4E === ;;;;
-;;;;              ;;;;
-;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                 ;;;;
+;;;; === NOTMUCH === ;;;;
+;;;;                 ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package mu4e
-  :commands (mu4e mu4e~start)
-  :config
-  (progn
-    (setq mu4e-sent-folder "/sent"                ;; Put sent messages to /sent in my maildir
-          mu4e-drafts-folder "/drafts"            ;; Put drafts to /drafts in my maildir
-          mu4e-trash-folder "/trash"              ;; Put deleted (but not fully removed) messages to /trash in my maildir
-          mu4e-attachment-dir "~/Downloads"       ;; Extract attachments to ~/Downloads
-          mu4e-hide-index-messages t
-          mu4e-get-mail-command "fetchmail"       ;; Run `fetchmail' to get my mail
-          mu4e-update-interval 1200               ;; Fetch messages and update database every 1200 seconds
-          mu4e-use-fancy-chars t                  ;; Show fancy UTF-8 characters
-          mu4e-headers-seen-mark      '("S" . "✔")
-          mu4e-headers-unread-mark    '("u" . "●")
-          mu4e-headers-new-mark       '("N" . "○")
-          mu4e-headers-replied-mark   '("R" . "←")
-          mu4e-headers-passed-mark    '("P" . "→")
-          mu4e-headers-flagged-mark   '("F" . "⚑")
-          mu4e-headers-draft-mark     '("D" . "⚒")
-          mu4e-headers-encrypted-mark '("x" . "e")
-          mu4e-headers-signed-mark    '("s" . "s")
-          mu4e-headers-trashed-mark   '("T" . "×")
-          mu4e-headers-attach-mark    '("a" . "⚓")
-          mu4e-headers-visible-flags  '(draft flagged passed replied unread)
-          mu4e-headers-visible-lines 20
-          mu4e-headers-default-prefix     '("|" . "│")
-          mu4e-headers-has-child-prefix   '("+" . "└")
-          mu4e-headers-first-child-prefix '("\\" . "└")
-          mu4e-headers-include-related nil
-          mu4e-headers-date-format    "%F %R"
-          mu4e-headers-fields         '((:human-date   . 20)
-                                        (:flags        .  6)
-                                        (:from         . 24)
-                                        (:subject))
-          mu4e-compose-signature-auto-include nil ;; Don't put signature automatically
-          mu4e-view-prefer-html nil               ;; I do not prefer to view messages in HTML
-          mu4e-view-show-addresses t              ;; Show full addresses in view message (instead of just names)
-          mu4e-html2text-command "elinks -dump"   ;; Use `elinks -dump' to convert HTML to text
-          mail-user-agent 'mu4e-user-agent)))
+;; Load notmuch
+(use-package notmuch)
 
-(setq mu4e-refile-folder
-      (lambda (msg)
-        (cond
-         ;; Messages to root@localhost go to /local directory
-         ((mu4e-message-contact-field-matches msg :to "root@localhost")
-          "/local")
-         ;; Messages from owner@bugs.debian.org go to /bugs directory
-         ((mu4e-message-contact-field-matches msg :from "owner@bugs.debian.org")
-          "/bugs")
-         ;; Messages from mailing lists go to their corresponding directories
-         ((string-match "debian-devel-announce.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-devel-announce")
-         ((string-match "debian-devel.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-devel")
-         ((string-match "debian-haskell.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-haskell")
-         ((string-match "debian-i18n.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-i18n")
-         ((string-match "debian-legal.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-legal")
-         ((string-match "debian-l10n-russian.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-l10n-russian")
-         ((string-match "debian-news.lists.debian.org\\|debian-announce.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-news")
-         ((string-match "debian-private.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-private")
-         ((string-match "debian-project.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-project")
-         ((string-match "debian-www.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-www")
-         ((string-match "debconf-discuss.lists.debconf.org\\|debconf-announce.lists.debconf.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/debconf")
-         ((string-match "pkg-emacsen-addons.lists.alioth.debian.org\\|debian-emacsen.lists.debian.org" (mu4e-message-field msg :mailing-list))
-          "/mailing-lists/d-emacsen")
-         ;; Everything else goes to /archive
-         (t "/archive"))))
+;; Define saved searches
+(setq notmuch-saved-searches '((:name "inbox" :query "tag:inbox")
+                               (:name "unread" :query "tag:inbox AND tag:unread")
+                               (:name "local" :query "tag:local")
+                               (:name "debian-mailing-lists" :query "to:lists.debian.org")
+                               (:name "bugs" :query "tag:bugs")))
 
-;; Define citation format
-(setq message-citation-line-format "%a %d %b %Y @ %R %f:\n")
-(setq message-citation-line-function 'message-insert-formatted-citation-line)
+;; Read and verify encrypted and signed MIME messages
+(setq notmuch-crypto-process-mime t)
 
-;; Load mu4e-header to silent errors related to mu4e-headers-actions
-(use-package mu4e-headers)
+;; Bind "S" to tag as spam in show-mode
+(define-key notmuch-show-mode-map "S"
+  (lambda ()
+    "Tag message as spam"
+    (interactive)
+    (notmuch-show-tag (list "+spam" "-inbox"))))
 
-;; Add org-contacts support to mu4e
-(use-package mu4e-actions
-  :config
-  (setq mu4e-org-contacts-file  "~/freedom/!org!/contacts.org")
-  (add-to-list 'mu4e-headers-actions
-               '("org-contact-add" . mu4e-action-add-org-contact) t)
-  (add-to-list 'mu4e-view-actions
-               '("org-contact-add" . mu4e-action-add-org-contact) t))
+;; Bind "S" to tag as spam in search-mode
+(define-key notmuch-search-mode-map "S"
+  (lambda (&optional beg end)
+    "Tag thread as spam"
+    (interactive (notmuch-search-interactive-region))
+    (notmuch-search-tag (list "+spam" "-inbox") beg end)))
+
+;; Bind "d" to toggle deleted tag in show-mode
+(define-key notmuch-show-mode-map "d"
+  (lambda ()
+    "Toggle deleted tag for message"
+    (interactive)
+    (if (member "deleted" (notmuch-show-get-tags))
+        (notmuch-show-tag (list "-deleted"))
+      (notmuch-show-tag (list "+deleted")))))
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
@@ -1178,6 +1121,10 @@
 
 ;; Don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
+
+;; Define citation format
+(setq message-citation-line-format "%a %d %b %Y @ %R %f:\n")
+(setq message-citation-line-function 'message-insert-formatted-citation-line)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
