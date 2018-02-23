@@ -135,9 +135,6 @@
 
 (setq browse-url-browser-function #'gk-browse-url)
 
-;; Disable linum-mode in EWW
-(add-hook 'eww-after-render-hook (lambda () (linum-mode -1)))
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
 ;;;; === UI and MISC === ;;;;
@@ -173,9 +170,6 @@
 ;; Highlight current line globally when Emacs run in GUI mode
 (when window-system
   (global-hl-line-mode))
-
-;; Show line numbers (globally)
-(global-linum-mode t)
 
 ;; Enable automatic updating a buffer if a file changes on disk
 (global-auto-revert-mode 1)
@@ -999,17 +993,29 @@
 
 (use-package golden-ratio)
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;                        ;;;;
-;;;; === LINUM-RELATIVE === ;;;;
-;;;;                        ;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                               ;;;;
+;;;; === LINUM, LINUM-RELATIVE === ;;;;
+;;;;                               ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Show line numbers (globally)
+(global-linum-mode t)
 
 ;; Load linum-relative
 (use-package linum-relative
   :config
   ;; Show real line number for the current line
   (setq linum-relative-current-symbol ""))
+
+;; Disable linum-mode in pdf-tools-mode
+(add-hook 'pdf-view-mode-hook (lambda () (linum-mode -1)))
+
+;; Disable linum-mode in EWW
+(add-hook 'eww-after-render-hook (lambda () (linum-mode -1)))
+
+;; Disable linum in notmuch-hello
+(add-hook 'notmuch-hello-mode-hook (lambda () (linum-mode -1)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
@@ -1031,9 +1037,6 @@
   :bind ("C-s" . isearch-forward))
 
 (pdf-tools-install)
-
-;; Disable linum-mode in pdf-tools-mode
-(add-hook 'pdf-view-mode-hook (lambda () (linum-mode -1)))
 
 ;; Revert PDF buffer after successful compilation of TeX file
 (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
@@ -1068,9 +1071,6 @@
 
 ;; Load notmuch
 (use-package notmuch)
-
-;; Disable linum in notmuch-hello
-(add-hook 'notmuch-hello-mode-hook (lambda () (linum-mode -1)))
 
 ;; Define saved searches
 (setq notmuch-saved-searches '((:name "unread" :query "tag:inbox AND tag:unread")
