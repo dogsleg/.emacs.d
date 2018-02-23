@@ -1069,6 +1069,9 @@
 ;; Load notmuch
 (use-package notmuch)
 
+;; Disable linum in notmuch-hello
+(add-hook 'notmuch-hello-mode-hook (lambda () (linum-mode -1)))
+
 ;; Define saved searches
 (setq notmuch-saved-searches '((:name "unread" :query "tag:inbox AND tag:unread")
                                (:name "inbox" :query "tag:inbox")
