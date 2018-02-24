@@ -76,6 +76,15 @@
 ;; Enable automatic compress/uncompress of files
 (auto-compression-mode t)
 
+;; Disable local variables
+(setq enable-local-variables nil)
+
+;; Load network security manager
+(require 'nsm)
+
+;; Paranoid network security
+(setq network-security-level 'paranoid)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                 ;;;;
 ;;;; === PACKAGE === ;;;;
