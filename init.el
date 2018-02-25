@@ -166,7 +166,7 @@
 ;; Show column number
 (setq column-number-mode t)
 
-;; Show time in 24 hours format
+;; Show time in 24 hours format in mode-line
 (setq display-time-mode t)
 (setq display-time-24hr-format t)
 
@@ -233,6 +233,12 @@
 
 ;; Don't spawn a dialog box when clicking on buttons or links
 (setq use-dialog-box nil)
+
+;; Highlight the current match during search
+(setq search-highlight t)
+
+;; Highlight matches during query replacement
+(setq query-replace-highlight t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                  ;;;;
@@ -775,6 +781,9 @@
   :config
   (show-paren-mode t)
   (setq show-paren-delay 0))
+
+;; Enable automatic parens pairing
+(electric-pair-mode 1)
 
 ;; Use colorful parens in all programming modes
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
