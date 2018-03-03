@@ -1146,14 +1146,18 @@
 
 (use-package smtpmail-async)
 
-(setq message-send-mail-function 'async-smtpmail-send-it             ;; Send mails asynchronously
-      smtpmail-stream-type 'ssl                                      ;; Use ssl
+;; Send mails asynchronously
+(setq message-send-mail-function 'async-smtpmail-send-it
+      ;; Use ssl
+      smtpmail-stream-type 'ssl
       smtpmail-smtp-user "dogsleg"
-      smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg") ;; Load credentials from an encrypted file
+      ;; Load credentials from an encrypted file
+      smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
       smtpmail-default-smtp-server "mail.riseup.net"
       smtpmail-smtp-server "mail.riseup.net"
       smtpmail-smtp-service 465
-      smtpmail-debug-info t)                                         ;; Enable debugging
+      ;; Enable debugging
+      smtpmail-debug-info t)
 
 ;; Don't keep message buffers around
 (setq message-kill-buffer-on-exit t)
@@ -1188,7 +1192,6 @@
 (use-package diminish
   :config
   ;; Show abbreviations instead of some modes
-  (diminish 'paredit-mode "П ")
   (diminish 'flycheck-mode "↑ ")
   (diminish 'eldoc-mode "⁈ ")
   (diminish 'hungry-delete-mode "☣ ")
