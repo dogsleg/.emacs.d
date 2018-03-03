@@ -917,6 +917,21 @@
 (setq org-todo-keywords
       '((sequence "NEXT(n)" "TODO(t)" "WAIT(w)" "PROJ(p)" "|" "DONE(d)" "CANCELLED(c)")))
 
+;; Define function to archive DONE and CANCELED stuff
+(defun org-archive-done-tasks ()
+  "Archive entries marked as DONE and CANCELED."
+  (interactive)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (outline-previous-heading)))
+   "/DONE" 'file)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (outline-previous-heading)))
+   "/CANCELLED" 'file))
+
 ;; Load org-bullets
 (use-package org-bullets
   :config
