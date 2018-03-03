@@ -1286,18 +1286,25 @@
  ("C-x 2" . vsplit-switch)
  ("C-x 3" . hsplit-switch))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;                      ;;;;
-;;;; === ALIGN-EQUALS === ;;;;
-;;;;                      ;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;;;;;;;;;;;;;;;;;;;;
+;;;;               ;;;;
+;;;; === ALIGN === ;;;;
+;;;;               ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;
 
 (defun align-equals (begin end)
   "Align equal symbols from BEGIN to END."
-  (interactive r)
+  (interactive "r")
   (align-regexp begin end "\\(\\s-*\\)=" 1 1))
 
 (bind-key "C-c =" 'align-equals)
+
+(defun align-arrows (begin end)
+  "Align arrow symbols from BEGIN to END."
+  (interactive "r")
+  (align-regexp begin end "\\(\\s-*\\)->" 1 1))
+
+(bind-key "C-c -" 'align-arrows)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                    ;;;;
