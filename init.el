@@ -1115,19 +1115,21 @@
 ;; Read and verify encrypted and signed MIME messages
 (setq notmuch-crypto-process-mime t)
 
-;; Bind "S" to tag as spam in show-mode
-(define-key notmuch-show-mode-map "S"
-  (lambda ()
-    "Tag message as spam"
-    (interactive)
-    (notmuch-show-tag (list "+spam" "-inbox"))))
-
 ;; Bind "S" to tag as spam in search-mode
 (define-key notmuch-search-mode-map "S"
   (lambda (&optional beg end)
     "Tag thread as spam"
     (interactive (notmuch-search-interactive-region))
     (notmuch-search-tag (list "+spam" "-inbox") beg end)))
+
+;; Bind "S" to toggle spam tag in show-mode
+(define-key notmuch-show-mode-map "S"
+  (lambda ()
+    "Toggle spam tag for message"
+    (interactive)
+    (if (member "deleted" (notmuch-show-get-tags))
+        (notmuch-show-tag (list "-spam"))
+      (notmuch-show-tag (list "+spam")))))
 
 ;; Bind "d" to toggle deleted tag in show-mode
 (define-key notmuch-show-mode-map "d"
