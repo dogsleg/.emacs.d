@@ -1090,9 +1090,6 @@
 ;;;;             ;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 
-;; Associate EPUB files with nov-mode
-(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
-
 ;; Set width of text in nov-mode to 80 characters
 (setq nov-text-width 80)
 
@@ -1362,12 +1359,18 @@ See `sort-regexp-fields'."
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
-;;;; === ELISP === ;;;;
+;;;; === MODES === ;;;;
 ;;;;               ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+;; *.mdwn files are in Markdown format
+(add-to-list 'auto-mode-alist '("\\.mdwn\\'" . markdown-mode))
+
 ;; Cask files are also Emacs Lisp files
 (add-to-list 'auto-mode-alist '("Cask\\'" . emacs-lisp-mode))
+
+;; *.epub files are to open in nov-mode
+(add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
