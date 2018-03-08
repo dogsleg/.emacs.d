@@ -334,15 +334,6 @@
 (unless (server-running-p)
   (server-start))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;                     ;;;;
-;;;; === EDIT-SERVER === ;;;;
-;;;;                     ;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(use-package edit-server)
-(edit-server-start)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
 ;;;; === FONT-LOCK === ;;;;
