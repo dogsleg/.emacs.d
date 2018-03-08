@@ -1464,6 +1464,7 @@ See `sort-regexp-fields'."
 (add-hook 'before-save-hook 'py-isort-before-save)
 
 (add-hook 'python-mode-hook 'jedi:setup)
+(setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
 
 (require 'pymacs)
