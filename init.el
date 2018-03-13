@@ -41,7 +41,7 @@
 
 (add-hook 'after-init-hook (lambda ()
                              ;; restore after startup
-                             (setq gc-cons-threshold 1048576
+                             (setq gc-cons-threshold 16777216
                                    gc-cons-percentage 0.1)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
