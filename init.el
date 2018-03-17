@@ -1187,6 +1187,18 @@
   (diminish 'hungry-delete-mode "☣ ")
   (diminish 'paredit-mode "() "))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                       ;;;;
+;;;; === VISUAL-REGEXP === ;;;;
+;;;;                       ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package visual-regexp
+  ;; Bind a key to repalce with visual-regexp
+  :bind ("C-c r" . vr/replace)
+  ;; Bind a key to query-replace with visual-regexp
+  ("C-c q" . vr/query-replace))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
 ;;;; === KEYBINDINGS === ;;;;
