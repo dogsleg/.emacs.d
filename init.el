@@ -311,6 +311,20 @@
 (set-keyboard-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                  ;;;;
+;;;; === SPELLING === ;;;;
+;;;;                  ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'ispell)
+
+(with-eval-after-load "ispell"
+  (setq ispell-program-name "hunspell")
+  (setq ispell-dictionary "ru_RU,en_US")
+  (ispell-set-spellchecker-params)
+  (ispell-hunspell-add-multi-dic "ru_RU,en_US"))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
 ;;;; === USE-PACKAGE === ;;;;
