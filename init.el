@@ -402,7 +402,10 @@
 ;; Load beginend
 (use-package beginend
   :config (beginend-global-mode)
-  :diminish (beginend-global-mode beginend-prog-mode beginend-magit-status-mode))
+  :diminish (beginend-global-mode
+             beginend-prog-mode
+             beginend-magit-status-mode
+             beginend-prodigy-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
