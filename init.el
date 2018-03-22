@@ -873,7 +873,6 @@
          ("http://feeds.feedburner.com/org/LOR" ru-foss)
          ("http://feeds.feedburner.com/rus-linux/VAK" ru-foss)
          ("http://zenway.ru/feed" ru-foss)
-         ("http://it-eburg.com/rss/rss.xml" ekb)
          ("http://urfu.ru/ru/?type=2" ekb)
          "http://lwn.net/headlines/rss"
          "https://yakking.branchable.com/blog/index.rss"
