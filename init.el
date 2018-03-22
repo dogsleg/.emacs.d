@@ -406,7 +406,17 @@
              beginend-prog-mode
              beginend-magit-status-mode
              beginend-prodigy-mode
-             beginend-elfeed-search-mode))
+             beginend-elfeed-search-mode
+             beginend-notmuch-search-mode
+             beginend-compilation-mode
+             beginend-org-agenda-mode
+             beginend-recentf-dialog-mode
+             beginend-bs-mode
+             beginend-vc-dir-mode
+             beginend-ibuffer-mode
+             beginend-occur-mode
+             beginend-dired-mode
+             beginend-message-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
