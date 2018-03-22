@@ -1057,7 +1057,9 @@
 (use-package linum-relative
   :config
   ;; Show real line number for the current line
-  (setq linum-relative-current-symbol ""))
+  (setq linum-relative-current-symbol "")
+  ;; Enable linum-relative globally
+  (linum-relative-global-mode t))
 
 ;; Disable linum-mode in pdf-tools-mode
 (add-hook 'pdf-view-mode-hook (lambda () (linum-mode -1)))
