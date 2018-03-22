@@ -405,7 +405,8 @@
   :diminish (beginend-global-mode
              beginend-prog-mode
              beginend-magit-status-mode
-             beginend-prodigy-mode))
+             beginend-prodigy-mode
+             beginend-elfeed-search-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
