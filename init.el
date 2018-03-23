@@ -1212,8 +1212,9 @@
 (use-package diminish
   :config
   ;; Show abbreviations instead of some modes
-  (diminish 'flycheck-mode "↑ ")
+  (diminish 'auto-revert-mode "♻ ")
   (diminish 'eldoc-mode "⁈ ")
+  (diminish 'flycheck-mode "↑ ")
   (diminish 'hungry-delete-mode "☣ ")
   (diminish 'paredit-mode "() "))
 
