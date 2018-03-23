@@ -1055,6 +1055,7 @@
 
 ;; Load linum-relative
 (use-package linum-relative
+  :diminish linum-relative-mode
   :config
   ;; Show real line number for the current line
   (setq linum-relative-current-symbol "")
