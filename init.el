@@ -752,6 +752,26 @@
   ;; Set fill-column-indicator color
   (setq fci-rule-color "orange"))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                   ;;;;
+;;;; === HIGHLIGHT === ;;;;
+;;;;                   ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Load highlight-indentation
+(use-package highlight-indentation
+  :config
+  ;; Set highlight-indentation-face to darker dim grey
+  (set-face-background 'highlight-indentation-face "#333333")
+  ;; Set highlight-indentation-current-column-face to dim grey
+  (set-face-background 'highlight-indentation-current-column-face "#646464"))
+
+;; Enable highlight-indentation-mode in programming modes
+(add-hook 'prog-mode-hook #'highlight-indentation-mode)
+
+;; Enable highlight-indentation-current-column-mode in programming modes
+(add-hook 'prog-mode-hook #'highlight-indentation-current-column-mode)
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === ZTREE === ;;;;
