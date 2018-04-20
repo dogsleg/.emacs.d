@@ -764,7 +764,9 @@
   ;; Set highlight-indentation-face to darker dim grey
   (set-face-background 'highlight-indentation-face "#333333")
   ;; Set highlight-indentation-current-column-face to dim grey
-  (set-face-background 'highlight-indentation-current-column-face "#646464"))
+  (set-face-background 'highlight-indentation-current-column-face "#646464")
+  :diminish (highlight-indentation-mode
+             highlight-indentation-current-column-mode))
 
 ;; Enable highlight-indentation-mode in programming modes
 (add-hook 'prog-mode-hook #'highlight-indentation-mode)
@@ -1271,7 +1273,8 @@
   (diminish 'eldoc-mode "⁈ ")
   (diminish 'flycheck-mode "↑ ")
   (diminish 'hungry-delete-mode "☣ ")
-  (diminish 'paredit-mode "() "))
+  (diminish 'paredit-mode "() ")
+  (diminish 'rainbow-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                       ;;;;
