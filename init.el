@@ -1161,6 +1161,13 @@
 ;; Read and verify encrypted and signed MIME messages
 (setq notmuch-crypto-process-mime t)
 
+;; Bind "U" to remove tag unread in search-mode
+(define-key notmuch-search-mode-map "U"
+  (lambda (&optional beg end)
+    "Remove unread tag"
+    (interactive (notmuch-search-interactive-region))
+    (notmuch-search-remove-tag (list "-unread") beg end)))
+
 ;; Bind "S" to tag as spam in search-mode
 (define-key notmuch-search-mode-map "S"
   (lambda (&optional beg end)
