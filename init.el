@@ -151,8 +151,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Make Emacs transparent
-(set-frame-parameter (selected-frame) 'alpha '(85 . 50))
-(add-to-list 'default-frame-alist '(alpha . (85 . 50)))
+(set-frame-parameter (selected-frame) 'alpha '(90 . 75))
+(add-to-list 'default-frame-alist '(alpha . (90 . 75)))
 
 ;; Do not show startup menu
 (setq inhibit-startup-screen t)
