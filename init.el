@@ -938,67 +938,6 @@
   ;; Enable engine-mode globally
   (engine-mode t))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;                  ;;;;
-;;;; === ORG-MODE === ;;;;
-;;;;                  ;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-(require 'org-install)
-
-;; Bind some useful keys
-(global-set-key "\C-cl" 'org-store-link)
-(global-set-key "\C-ca" 'org-agenda)
-(global-set-key "\C-cc" 'org-capture)
-(global-set-key "\C-cb" 'org-iswitchb)
-
-;; Show ⤵ instead of (...)
-(setq org-ellipsis "⤵")
-
-(setq org-log-done t)
-
-;; Define my status keywords
-(setq org-todo-keywords
-      '((sequence "NEXT(n)" "TODO(t)" "WAIT(w)" "PROJ(p)" "|" "DONE(d)" "CANCELLED(c)")))
-
-;; Define function to archive DONE and CANCELED stuff
-(defun org-archive-done-tasks ()
-  "Archive entries marked as DONE and CANCELED."
-  (interactive)
-  (org-map-entries
-   (lambda ()
-     (org-archive-subtree)
-     (setq org-map-continue-from (outline-previous-heading)))
-   "/DONE" 'file)
-  (org-map-entries
-   (lambda ()
-     (org-archive-subtree)
-     (setq org-map-continue-from (outline-previous-heading)))
-   "/CANCELLED" 'file))
-
-;; Load org-bullets
-(use-package org-bullets
-  :config
-  ;; Enable org-bullets in org-mode
-  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
-  ;; Use these cool bullets to mark levels
-  (setq org-bullets-bullet-list '("⊢" "⋮" "⋱" "⸳")))
-
-;; Enable org-contacts
-(use-package org-contacts)
-
-;; Add org-contacts to org-capture
-(add-to-list 'org-capture-templates
-             '("c" "Contacts" entry (file "~/freedom/!org!/contacts.org")
-               "* %(org-contacts-template-name)
-:PROPERTIES:
-:EMAIL: %(org-contacts-template-email)
-:PHONE:
-:NICKNAME:
-:ADDRESS:
-:BIRTHDAY:
-:END:"))
-
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === DIRED === ;;;;
@@ -1116,44 +1055,6 @@
   :bind ("C-s" . isearch-forward))
 
 (pdf-tools-install)
-
-;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;                ;;;;
-;;;; === AUCTEX === ;;;;
-;;;;                ;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;
-
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq-default TeX-master nil)
-
-(use-package tex-site
-  :mode ("\\.tex\\'" . latex-mode)
-  :config
-  (setq TeX-auto-save t)
-  (setq TeX-parse-self t)
-  (setq-default TeX-master nil)
-  (add-hook 'LaTeX-mode-hook
-            (lambda ()
-              (rainbow-delimiters-mode)
-              (turn-on-reftex)
-              (setq reftex-plug-into-AUCTeX t)
-              (reftex-isearch-minor-mode)
-              (setq TeX-PDF-mode t)
-              (setq TeX-source-correlate-method 'synctex)
-              (setq TeX-source-correlate-start-server t)))
-
-;; Revert PDF buffer after successful compilation of TeX file
-(add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
-
-;; Use pdf-tools with auctex
-(add-hook 'LaTeX-mode-hook 'pdf-tools-install)
-(setq TeX-view-program-selection '((output-pdf "pdf-tools"))
-      TeX-source-correlate-start-server t)
-(setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view"))))
-
-;; Prompt for empty optional arguments in cite
-(setq reftex-cite-prompt-optional-args t)
 
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;             ;;;;
@@ -1287,6 +1188,105 @@
   :bind ("C-c r" . vr/replace)
   ;; Bind a key to query-replace with visual-regexp
   ("C-c q" . vr/query-replace))
+
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                  ;;;;
+;;;; === ORG-MODE === ;;;;
+;;;;                  ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(require 'org-install)
+
+;; Bind some useful keys
+(global-set-key "\C-cl" 'org-store-link)
+(global-set-key "\C-ca" 'org-agenda)
+(global-set-key "\C-cc" 'org-capture)
+(global-set-key "\C-cb" 'org-iswitchb)
+
+;; Show ⤵ instead of (...)
+(setq org-ellipsis "⤵")
+
+(setq org-log-done t)
+
+;; Define my status keywords
+(setq org-todo-keywords
+      '((sequence "NEXT(n)" "TODO(t)" "WAIT(w)" "PROJ(p)" "|" "DONE(d)" "CANCELLED(c)")))
+
+;; Define function to archive DONE and CANCELED stuff
+(defun org-archive-done-tasks ()
+  "Archive entries marked as DONE and CANCELED."
+  (interactive)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (outline-previous-heading)))
+   "/DONE" 'file)
+  (org-map-entries
+   (lambda ()
+     (org-archive-subtree)
+     (setq org-map-continue-from (outline-previous-heading)))
+   "/CANCELLED" 'file))
+
+;; Load org-bullets
+(use-package org-bullets
+  :config
+  ;; Enable org-bullets in org-mode
+  (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
+  ;; Use these cool bullets to mark levels
+  (setq org-bullets-bullet-list '("⊢" "⋮" "⋱" "⸳")))
+
+;; Enable org-contacts
+(use-package org-contacts)
+
+;; Add org-contacts to org-capture
+(add-to-list 'org-capture-templates
+             '("c" "Contacts" entry (file "~/freedom/!org!/contacts.org")
+               "* %(org-contacts-template-name)
+:PROPERTIES:
+:EMAIL: %(org-contacts-template-email)
+:PHONE:
+:NICKNAME:
+:ADDRESS:
+:BIRTHDAY:
+:END:"))
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                ;;;;
+;;;; === AUCTEX === ;;;;
+;;;;                ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+(setq TeX-auto-save t)
+(setq TeX-parse-self t)
+(setq-default TeX-master nil)
+
+(use-package tex-site
+  :mode ("\\.tex\\'" . latex-mode)
+  :config
+  (setq TeX-auto-save t)
+  (setq TeX-parse-self t)
+  (setq-default TeX-master nil)
+  (add-hook 'LaTeX-mode-hook
+            (lambda ()
+              (rainbow-delimiters-mode)
+              (turn-on-reftex)
+              (setq reftex-plug-into-AUCTeX t)
+              (reftex-isearch-minor-mode)
+              (setq TeX-PDF-mode t)
+              (setq TeX-source-correlate-method 'synctex)
+              (setq TeX-source-correlate-start-server t)))
+
+;; Revert PDF buffer after successful compilation of TeX file
+(add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
+
+;; Use pdf-tools with auctex
+(add-hook 'LaTeX-mode-hook 'pdf-tools-install)
+(setq TeX-view-program-selection '((output-pdf "pdf-tools"))
+      TeX-source-correlate-start-server t)
+(setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view"))))
+
+;; Prompt for empty optional arguments in cite
+(setq reftex-cite-prompt-optional-args t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
