@@ -1288,6 +1288,26 @@
 ;; Prompt for empty optional arguments in cite
 (setq reftex-cite-prompt-optional-args t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                   ;;;;
+;;;; === YASNIPPET === ;;;;
+;;;;                   ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Load yasnippet
+(use-package yasnippet
+  ;; Enable yasnippet globally
+  :config (yas-global-mode 1)
+  ;; Bind keys
+  :bind (("C-c y l" . yas-describe-tables)
+         ("C-c y x" . yas-expand)
+         ("C-c y i" . yas-insert-snippet)
+         ("C-c y d" . yas-load-directory)
+         ("C-c y n" . yas-new-snippet)
+         ("C-c y a" . yas-reload-all)
+         ("C-c y t" . yas-tryout-snippet)
+         ("C-c y f" . yas-visit-snippet-file)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
 ;;;; === KEYBINDINGS === ;;;;
