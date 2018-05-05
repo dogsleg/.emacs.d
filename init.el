@@ -973,6 +973,12 @@
 (use-package dired-quick-sort)
 (dired-quick-sort-setup)
 
+;; Load dired-rsync
+(use-package dired-rsync
+  :config
+  ;; Bind a key to run dired-rsync
+  (bind-key "C-c C-r" 'dired-rsync dired-mode-map))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === ELDOC === ;;;;
