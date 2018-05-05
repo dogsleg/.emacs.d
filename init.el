@@ -330,6 +330,7 @@
 
 (require 'ispell)
 
+;; Use hunspell with multiple dictionaries
 (with-eval-after-load "ispell"
   (setq ispell-really-hunspell t)
   (setq ispell-program-name "hunspell")
