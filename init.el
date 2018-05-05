@@ -311,9 +311,16 @@
 ;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Enable UTF-8 encoding
+(set-charset-priority 'unicode)
+(set-default-coding-systems 'utf-8)
 (set-terminal-coding-system 'utf-8)
 (set-keyboard-coding-system 'utf-8)
+(set-selection-coding-system 'utf-8)
 (prefer-coding-system 'utf-8)
+(setq default-process-coding-system '(utf-8-unix . utf-8-unix))
+
+;; Make Emacs accept UTF-8 (spelled uppercase) encoding
+(define-coding-system-alias 'UTF-8 'utf-8)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                  ;;;;
@@ -324,6 +331,7 @@
 (require 'ispell)
 
 (with-eval-after-load "ispell"
+  (setq ispell-really-hunspell t)
   (setq ispell-program-name "hunspell")
   (setq ispell-dictionary "ru_RU,en_US")
   (ispell-set-spellchecker-params)
