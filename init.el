@@ -1100,7 +1100,7 @@
 (setq notmuch-crypto-process-mime t)
 
 ;; Bind "U" to remove tag unread in search-mode
-(define-key notmuch-search-mode-map "U"
+(define-key notmuch-search-mode-map "u"
   (lambda (&optional beg end)
     "Remove unread tag"
     (interactive (notmuch-search-interactive-region))
