@@ -1048,9 +1048,15 @@
 
 ;; Disable linum-mode in EWW
 (add-hook 'eww-after-render-hook (lambda () (linum-mode -1)))
+(add-hook 'eww-after-render-hook (lambda () (linum-relative-mode -1)))
 
-;; Disable linum in notmuch-hello
+;; Disable linum-mode in notmuch-hello
 (add-hook 'notmuch-hello-mode-hook (lambda () (linum-mode -1)))
+(add-hook 'notmuch-hello-mode-hook (lambda () (linum-relative-mode -1)))
+
+;; Disable linum-mode in org-mode
+(add-hook 'org-mode-hook (lambda () (linum-mode -1)))
+(add-hook 'org-mode-hook (lambda () (linum-relative-mode -1)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
