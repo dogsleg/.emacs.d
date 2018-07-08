@@ -1046,6 +1046,10 @@
 (add-hook 'pdf-view-mode-hook (lambda () (linum-mode -1)))
 (add-hook 'pdf-view-mode-hook (lambda () (linum-relative-mode -1)))
 
+;; Disable linum-mode in eshell
+(add-hook 'eshell-mode-hook (lambda () (linum-mode -1)))
+(add-hook 'eshell-mode-hook (lambda () (linum-relative-mode -1)))
+
 ;; Disable linum-mode in EWW
 (add-hook 'eww-after-render-hook (lambda () (linum-mode -1)))
 (add-hook 'eww-after-render-hook (lambda () (linum-relative-mode -1)))
