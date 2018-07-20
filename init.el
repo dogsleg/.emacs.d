@@ -966,8 +966,14 @@
 ;; Allow editing file permissions
 (setq wdired-allow-to-change-permissions t)
 
-;; Easily copy/move from one dired dir to the next dired dir shown in a split window
+;; Easily copy/move from one dir to the next dir shown in a split
 (setq dired-dwim-target t)
+
+;; Do not hide symbolic link targets
+(setq dired-hide-details-hide-symlink-targets nil)
+
+;; Always copy recursively
+(setq dired-recursive-copies 'always)
 
 ;; Define programs to open specific files
 (setq dired-open-extensions
