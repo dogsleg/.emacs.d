@@ -1313,6 +1313,9 @@
       TeX-source-correlate-start-server t)
 (setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view"))))
 
+;; Load RefTeX after AUCTeX
+(use-package reftex :after auctex)
+
 ;; Prompt for empty optional arguments in cite
 (setq reftex-cite-prompt-optional-args t)
 
