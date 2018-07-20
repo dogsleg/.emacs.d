@@ -1333,6 +1333,11 @@
          ("C-c y t" . yas-tryout-snippet)
          ("C-c y f" . yas-visit-snippet-file)))
 
+(use-package yasnippet-snippets
+  ;; Initialize yasnippet-snippets after yasnippet itself
+  :after yasnippet
+  :config (yasnippet-snippets-initialize))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
 ;;;; === KEYBINDINGS === ;;;;
