@@ -747,6 +747,23 @@
 
 (bind-key "C-c z" 'hydra-transparency/body)
 
+(defhydra hydra-yasnippet (:color blue)
+  "
+  ^
+  ^YASnippet^          ^Do^
+  ^─────────^──────────^──^────────
+  _q_ quit             _i_ insert
+  ^^                   _m_ mode
+  ^^                   _n_ new
+  ^^                   ^^
+  "
+  ("q" nil)
+  ("i" yas-insert-snippet)
+  ("m" yas-minor-mode)
+  ("n" yas-new-snippet))
+
+(bind-key "C-c s" 'hydra-yasnippet/body)
+
 ;;;;;;;;;;;;;;;;;;;;;
 ;;;;             ;;;;
 ;;;; === FCI === ;;;;
