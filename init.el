@@ -440,10 +440,10 @@
 ;; Load eshell
 (use-package eshell
   :config
-  ;; Do not show anything in front of eshell prompt
-  (setq eshell-banner-message ""
-        eshell-history-size 1024
-        eshell-hist-ignoredups t))
+  (setq eshell-banner-message "" ;; Do not show anything in front of eshell prompt
+        eshell-history-size 1024 ;; History size
+        eshell-hist-ignoredups t ;; Ignore duplicates
+        eshell-scroll-to-bottom-on-input 'all))
 
 ;; Set environment variables
 (setenv "DEBEMAIL" "dogsleg@debian.org")
