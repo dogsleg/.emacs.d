@@ -1,6 +1,7 @@
-alias git git --no-pager $*
-alias pk eshell-up-peek $1
-alias up eshell-up $1
-alias lsa ls -la $*
-alias ff find-file $1
+alias fo find-file-other-window $1
 alias d dired $1
+alias ff find-file $1
+alias lsa ls -la $*
+alias up eshell-up $1
+alias pk eshell-up-peek $1
+alias git git --no-pager $*
