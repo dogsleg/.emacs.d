@@ -23,13 +23,13 @@
 
 ;; This is my GNU Emacs configuration file.
 
-;; Since I run Debian on my machines and I am a member of Debian Emacs
-;; Addons Packaging Team [https://pkg-emacsen.alioth.debian.org/],
-;; typically I install Emacs packages from the official Debian
-;; repository.  And if I need some Emacs package that is not in the
-;; official Debian repository yet, usually I create that Debian
-;; package with help of magical dh-elpa and dh-make-elpa utilities and
-;; upload it to the Debian archive.
+;; Since I run Debian on my machines and I am a member of Debian
+;; Emacsen team [https://wiki.debian.org/EmacsenTeam], typically I
+;; install Emacs packages from the official Debian repository. And if
+;; I need some Emacs package that is not in the official Debian
+;; repository yet, usually I create that Debian package with help of
+;; magical dh-elpa and dh-make-elpa utilities and upload it to the
+;; Debian archive.
 
 ;; My GPG key: DE6B A671 D57D 9B00 9CF6  8650 5EE7 6EE2 0216 D2A5
 
