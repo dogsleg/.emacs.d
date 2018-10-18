@@ -60,6 +60,9 @@
 ;;;;               ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Prefer newer bytecode
+(setq load-prefer-newer t)
+
 ;; Disable menubar, toolbar, scrollbar
 (dolist (mode '(menu-bar-mode tool-bar-mode scroll-bar-mode))
   (when (fboundp mode) (funcall mode -1)))
