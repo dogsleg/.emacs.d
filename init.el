@@ -597,6 +597,15 @@
 ;; Load iedit
 (use-package iedit)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                   ;;;;
+;;;; === MOVE-TEXT === ;;;;
+;;;;                   ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package move-text
+  :init (move-text-default-bindings))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                  ;;;;
 ;;;; === FLYCHECK === ;;;;
