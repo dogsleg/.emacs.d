@@ -603,7 +603,9 @@
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Load move-text
 (use-package move-text
+  ;; Use the default bindings
   :init (move-text-default-bindings))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
