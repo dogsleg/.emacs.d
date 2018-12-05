@@ -338,8 +338,9 @@
   (setq ispell-really-hunspell t)
   (setq ispell-program-name "hunspell")
   (setq ispell-dictionary "ru_RU,en_US")
-  (ispell-set-spellchecker-params)
-  (ispell-hunspell-add-multi-dic "ru_RU,en_US"))
+  ;; (ispell-set-spellchecker-params)
+  ;; (ispell-hunspell-add-multi-dic "ru_RU,en_US")
+  )
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
