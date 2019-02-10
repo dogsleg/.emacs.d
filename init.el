@@ -933,6 +933,18 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                    ;;;;
+;;;; === PROJECTILE === ;;;;
+;;;;                    ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Load projectile
+(use-package projectile
+  :config (projectile-mode +1)
+  ;; Bind key to projectile-command-map
+  :bind (:map projectile-mode-map ("C-c p" . projectile-command-map)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
 ;;;; === ELFEED === ;;;;
