@@ -1100,6 +1100,10 @@
 (add-hook 'org-mode-hook (lambda () (linum-mode -1)))
 (add-hook 'org-mode-hook (lambda () (linum-relative-mode -1)))
 
+;; Disable linum-mode in nov
+(add-hook 'nov-mode-hook (lambda () (linum-mode -1)))
+(add-hook 'nov-mode-hook (lambda () (linum-relative-mode -1)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
 ;;;; === PDF-TOOLS === ;;;;
