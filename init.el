@@ -337,11 +337,6 @@
 (with-eval-after-load "ispell"
   (setq ispell-program-name "/usr/bin/aspell"))
 
-(setq ispell-dictionary-alist '(
-       ("english" "[A-Za-z]" "[^A-Za-z]" "[']" nil ("-l" "english") nil utf-8)
-       ("russian" "[А-Яа-я]" "[^А-Яа-я]" "" nil ("-l" "russian") nil utf-8)
-       ))
-
 (defun switch-dictionary (choice)
    "Switch between language dictionaries (optionally switched to CHOICE value)."
    (interactive "cChoose:  (1) English | (2) Русский")
