@@ -348,7 +348,7 @@
            (setq ispell-dictionary "russian")
            (ispell-kill-ispell)
            (message "Switched to Russian."))
-          (t (message "No changes have been made."))) )
+          (t (message "No changes have been made."))))
 
 (global-set-key (kbd "C-c M-s") 'switch-dictionary)
 
