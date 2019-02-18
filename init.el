@@ -333,14 +333,29 @@
 
 (require 'ispell)
 
-;; Use hunspell with multiple dictionaries
+;; Use aspell to spellcheck
 (with-eval-after-load "ispell"
-  (setq ispell-really-hunspell t)
-  (setq ispell-program-name "/usr/bin/hunspell")
-  (setq ispell-dictionary "ru_RU,en_US")
-  ;; (ispell-set-spellchecker-params)
-  ;; (ispell-hunspell-add-multi-dic "ru_RU,en_US")
-  )
+  (setq ispell-program-name "/usr/bin/aspell"))
+
+(setq ispell-dictionary-alist '(
+       ("english" "[A-Za-z]" "[^A-Za-z]" "[']" nil ("-l" "english") nil utf-8)
+       ("russian" "[А-Яа-я]" "[^А-Яа-я]" "" nil ("-l" "russian") nil utf-8)
+       ))
+
+(defun switch-dictionary (choice)
+   "Switch between language dictionaries (optionally switched to CHOICE value)."
+   (interactive "cChoose:  (1) English | (2) Русский")
+    (cond ((eq choice ?1)
+           (setq ispell-dictionary "english")
+           (ispell-kill-ispell)
+           (message "Switched to English."))
+          ((eq choice ?2)
+           (setq ispell-dictionary "russian")
+           (ispell-kill-ispell)
+           (message "Switched to Russian."))
+          (t (message "No changes have been made."))) )
+
+(global-set-key (kbd "C-c M-s") 'switch-dictionary)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
