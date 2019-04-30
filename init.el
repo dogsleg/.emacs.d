@@ -968,17 +968,18 @@
          ("http://www.debian.org/security/dsa.en.rdf" debian)
          ("https://micronews.debian.org/feeds/feed.rss" debian)
          ("http://planet.emacsen.org/atom.xml" emacs)
+         ("http://lwn.net/headlines/rss" foss)
+         ("https://opensource.com/feed" foss)
+         ("http://planet.fsfe.org/en/rss20.xml" foss)
          ("http://www.opennet.ru/opennews/opennews_all.rss" ru-foss)
          ("http://feeds.feedburner.com/org/LOR" ru-foss)
          ("http://feeds.feedburner.com/rus-linux/VAK" ru-foss)
          ("http://zenway.ru/feed" ru-foss)
          ("http://urfu.ru/ru/?type=2" ekb)
-         "http://lwn.net/headlines/rss"
+         ("https://trv-science.ru/feed/" science)
          "https://yakking.branchable.com/blog/index.rss"
          "http://feeds.feedburner.com/Phoronix"
-         "https://opensource.com/feed"
          "http://slashdot.org/index.rss"
-         "http://planet.fsfe.org/en/rss20.xml"
          ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
