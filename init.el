@@ -1229,8 +1229,6 @@
       ;; Use ssl
       smtpmail-stream-type 'ssl
       smtpmail-smtp-user "dogsleg"
-      ;; Load credentials from an encrypted file
-      smtpmail-auth-credentials (expand-file-name "~/.authinfo.gpg")
       smtpmail-default-smtp-server "mail.riseup.net"
       smtpmail-smtp-server "mail.riseup.net"
       smtpmail-smtp-service 465
