@@ -352,6 +352,16 @@
 
 (global-set-key (kbd "C-c M-s") 'switch-dictionary)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                         ;;;;
+;;;; === AUTH-PASS-STORE === ;;;;
+;;;;                         ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Enable auth-source-password-store
+(require 'auth-source-pass)
+(auth-source-pass-enable)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
 ;;;; === USE-PACKAGE === ;;;;
