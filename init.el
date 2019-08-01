@@ -187,6 +187,9 @@
 (when window-system
   (global-hl-line-mode))
 
+;; Disable line highlight in eshell
+(add-hook 'eshell-mode-hook (lambda () (global-hl-line-mode -1)))
+
 ;; Enable automatic updating a buffer if a file changes on disk
 (global-auto-revert-mode 1)
 
@@ -504,6 +507,12 @@
   :config
   ;; Integrate bookmark support to Eshell
   (add-hook 'eshell-mode-hook 'eshell-bookmark-setup))
+
+;; Load eshell-git-prompt
+(use-package eshell-git-prompt
+  :config
+  ;; Enable powerline theme
+  (eshell-git-prompt-use-theme 'powerline))
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
