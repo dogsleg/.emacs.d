@@ -1132,6 +1132,10 @@
 (add-hook 'notmuch-hello-mode-hook (lambda () (linum-mode -1)))
 (add-hook 'notmuch-hello-mode-hook (lambda () (linum-relative-mode -1)))
 
+;; Disable linum-mode in notmuch-search
+(add-hook 'notmuch-search-mode-hook (lambda () (linum-mode -1)))
+(add-hook 'notmuch-search-mode-hook (lambda () (linum-relative-mode -1)))
+
 ;; Disable linum-mode in org-mode
 (add-hook 'org-mode-hook (lambda () (linum-mode -1)))
 (add-hook 'org-mode-hook (lambda () (linum-relative-mode -1)))
