@@ -1690,7 +1690,4 @@ See `sort-regexp-fields'."
 (setq jedi:setup-keys t)
 (setq jedi:complete-on-dot t)
 
-(require 'pymacs)
-(pymacs-load "ropemacs" "rope-")
-
 ;;; init.el ends here
