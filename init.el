@@ -1347,6 +1347,9 @@
   ;; Use these cool bullets to mark levels
   (setq org-bullets-bullet-list '("⊢" "⋮" "⋱" "⸳")))
 
+;; Load org-notmuch
+(use-package org-notmuch)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
 ;;;; === AUCTEX === ;;;;
