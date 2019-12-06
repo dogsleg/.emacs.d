@@ -1223,6 +1223,13 @@
         (notmuch-show-tag (list "-deleted"))
       (notmuch-show-tag (list "+deleted")))))
 
+;; Bind "D" to tag as deleted in search-mode
+(define-key notmuch-search-mode-map "D"
+  (lambda (&optional beg end)
+    "Tag thread as deleted"
+    (interactive (notmuch-search-interactive-region))
+    (notmuch-search-tag (list "+deleted" "-inbox") beg end)))
+
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
 ;;;; === SMTP === ;;;;
