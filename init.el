@@ -508,6 +508,14 @@
   ;; Enable powerline theme
   (eshell-git-prompt-use-theme 'powerline))
 
+;; Load eshell-z
+(use-package eshell-z)
+
+;; Use eshell-z in eshell
+(add-hook 'eshell-mode-hook
+          (defun my-eshell-mode-hook ()
+            (require 'eshell-z)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === TRAMP === ;;;;
