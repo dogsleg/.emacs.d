@@ -509,12 +509,12 @@
   (eshell-git-prompt-use-theme 'powerline))
 
 ;; Load eshell-z
-(use-package eshell-z)
-
-;; Use eshell-z in eshell
-(add-hook 'eshell-mode-hook
-          (defun my-eshell-mode-hook ()
-            (require 'eshell-z)))
+(use-package eshell-z
+  :config
+  ;; Use eshell-z in eshell
+  (add-hook 'eshell-mode-hook
+            (defun my-eshell-mode-hook ()
+              (require 'eshell-z))))
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
@@ -537,9 +537,9 @@
 (use-package with-editor
   :config
   (add-hook 'shell-mode-hook  'with-editor-export-editor)
-  (add-hook 'term-mode-hook   'with-editor-export-editor)
   (add-hook 'term-exec-hook   'with-editor-export-editor)
-  (add-hook 'eshell-mode-hook 'with-editor-export-editor))
+  (add-hook 'eshell-mode-hook 'with-editor-export-editor)
+  )
 
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
