@@ -377,6 +377,17 @@
 ;; Enable imenu support for use-package
 (setq use-package-enable-imenu-support t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                     ;;;;
+;;;; === ENVIRONMENT === ;;;;
+;;;;                     ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package exec-path-from-shell
+  :config
+  (exec-path-from-shell-copy-env "SSH_AGENT_PID")
+  (exec-path-from-shell-copy-env "SSH_AUTH_SOCK"))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
 ;;;; === SERVER === ;;;;
