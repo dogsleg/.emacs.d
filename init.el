@@ -1122,44 +1122,28 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Show line numbers (globally)
-(global-linum-mode t)
+(global-display-line-numbers-mode)
 
-;; Load linum-relative
-(use-package linum-relative
-  :diminish linum-relative-mode
-  :config
-  ;; Show real line number for the current line
-  (setq linum-relative-current-symbol "")
-  ;; Enable linum-relative globally
-  (linum-relative-global-mode t))
+;; Disable display-line-numbers-mode in pdf-tools-mode
+(add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
 
-;; Disable linum-mode in pdf-tools-mode
-(add-hook 'pdf-view-mode-hook (lambda () (linum-mode -1)))
-(add-hook 'pdf-view-mode-hook (lambda () (linum-relative-mode -1)))
+;; Disable display-line-numbers-mode in eshell
+(add-hook 'eshell-mode-hook (lambda () (display-line-numbers-mode -1)))
 
-;; Disable linum-mode in eshell
-(add-hook 'eshell-mode-hook (lambda () (linum-mode -1)))
-(add-hook 'eshell-mode-hook (lambda () (linum-relative-mode -1)))
+;; Disable display-line-numbers-mode in EWW
+(add-hook 'eww-after-render-hook (lambda () (display-line-numbers-mode -1)))
 
-;; Disable linum-mode in EWW
-(add-hook 'eww-after-render-hook (lambda () (linum-mode -1)))
-(add-hook 'eww-after-render-hook (lambda () (linum-relative-mode -1)))
+;; Disable display-line-numbers-mode in notmuch-hello
+(add-hook 'notmuch-hello-mode-hook (lambda () (display-line-numbers-mode -1)))
 
-;; Disable linum-mode in notmuch-hello
-(add-hook 'notmuch-hello-mode-hook (lambda () (linum-mode -1)))
-(add-hook 'notmuch-hello-mode-hook (lambda () (linum-relative-mode -1)))
+;; Disable display-line-numbers-mode in notmuch-search
+(add-hook 'notmuch-search-mode-hook (lambda () (display-line-numbers-mode -1)))
 
-;; Disable linum-mode in notmuch-search
-(add-hook 'notmuch-search-mode-hook (lambda () (linum-mode -1)))
-(add-hook 'notmuch-search-mode-hook (lambda () (linum-relative-mode -1)))
+;; Disable display-line-numbers-mode in org-mode
+(add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
 
-;; Disable linum-mode in org-mode
-(add-hook 'org-mode-hook (lambda () (linum-mode -1)))
-(add-hook 'org-mode-hook (lambda () (linum-relative-mode -1)))
-
-;; Disable linum-mode in nov
-(add-hook 'nov-mode-hook (lambda () (linum-mode -1)))
-(add-hook 'nov-mode-hook (lambda () (linum-relative-mode -1)))
+;; Disable display-line-numbers-mode in nov
+(add-hook 'nov-mode-hook (lambda () (display-line-numbers-mode -1)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
