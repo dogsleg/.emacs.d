@@ -1316,31 +1316,22 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
+;; Set agenda files
+(setq org-agenda-files '("~/Documents/!org!/general.org"))
+
 ;; Show ⤵ instead of (...)
 (setq org-ellipsis "⤵")
 
+;; Record DONE time
 (setq org-log-done t)
+
+;; Archive DONE stuff to *.org_archive
+(setq org-archive-location "%s_archive::")
 
 ;; Define my status keywords
 (setq org-todo-keywords
       '((sequence "NEXT(n)" "TODO(t)" "WAIT(w)" "PROJ(p)" "|" "DONE(d)" "CANCELLED(c)")))
 
-;; Define function to archive DONE and CANCELED stuff
-(defun org-archive-done-tasks ()
-  "Archive entries marked as DONE and CANCELED."
-  (interactive)
-  (org-map-entries
-   (lambda ()
-     (org-archive-subtree)
-     (setq org-map-continue-from (outline-previous-heading)))
-   "/DONE" 'file)
-  (org-map-entries
-   (lambda ()
-     (org-archive-subtree)
-     (setq org-map-continue-from (outline-previous-heading)))
-   "/CANCELLED" 'file))
-
-;; Load org-bullets
 (use-package org-bullets
   :config
   ;; Enable org-bullets in org-mode
