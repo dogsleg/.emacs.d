@@ -1332,6 +1332,9 @@
 (setq org-todo-keywords
       '((sequence "NEXT(n)" "TODO(t)" "WAIT(w)" "PROJ(p)" "|" "DONE(d)" "CANCELLED(c)")))
 
+;; Do not DONE supertask in case there are still any TODO subtask
+(setq org-enforce-todo-dependencies t)
+
 (use-package org-bullets
   :config
   ;; Enable org-bullets in org-mode
