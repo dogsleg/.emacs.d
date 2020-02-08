@@ -1139,6 +1139,9 @@
 ;; Disable display-line-numbers-mode in notmuch-search
 (add-hook 'notmuch-search-mode-hook (lambda () (display-line-numbers-mode -1)))
 
+;; Disable display-line-numbers-mode in notmuch-show
+(add-hook 'notmuch-show-mode-hook (lambda () (display-line-numbers-mode -1)))
+
 ;; Disable display-line-numbers-mode in org-mode
 (add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
 
