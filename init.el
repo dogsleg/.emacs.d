@@ -1258,6 +1258,14 @@
 (setq message-citation-line-format "%a %d %b %Y @ %R %f:\n")
 (setq message-citation-line-function 'message-insert-formatted-citation-line)
 
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;              ;;;;
+;;;; === GNUS === ;;;;
+;;;;              ;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+
+(setq gnus-select-method '(nntp "news.gnus.org"))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
 ;;;; === DUMB-JUMP === ;;;;
