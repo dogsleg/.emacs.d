@@ -453,21 +453,23 @@
 ;; Load beginend
 (use-package beginend
   :config (beginend-global-mode)
-  :diminish (beginend-global-mode
-             beginend-prog-mode
-             beginend-magit-status-mode
-             beginend-prodigy-mode
-             beginend-elfeed-search-mode
-             beginend-notmuch-search-mode
+  :diminish (beginend-bs-mode
              beginend-compilation-mode
-             beginend-org-agenda-mode
-             beginend-recentf-dialog-mode
-             beginend-bs-mode
-             beginend-vc-dir-mode
-             beginend-ibuffer-mode
-             beginend-occur-mode
              beginend-dired-mode
-             beginend-message-mode))
+             beginend-elfeed-search-mode
+             beginend-global-mode
+             beginend-ibuffer-mode
+             beginend-magit-status-mode
+             beginend-message-mode
+             beginend-notmuch-search-mode
+             beginend-occur-mode
+             beginend-org-agenda-mode
+             beginend-org-mode
+             beginend-outline-mode
+             beginend-prodigy-mode
+             beginend-prog-mode
+             beginend-recentf-dialog-mode
+             beginend-vc-dir-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
