@@ -1079,6 +1079,20 @@
   ;; Bind a key to run dired-rsync
   (bind-key "C-c C-r" 'dired-rsync dired-mode-map))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                         ;;;;
+;;;; === SYSTEM-PACKAGES === ;;;;
+;;;;                         ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Enable system-packages
+(use-package system-packages
+  :config
+  ;; Use sudo
+  (setq system-packages-use-sudo t)
+  ;; Use apt
+  (setq system-packages-package-manager 'apt))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === ELDOC === ;;;;
