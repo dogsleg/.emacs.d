@@ -1088,8 +1088,8 @@
 ;; Enable system-packages
 (use-package system-packages
   :config
-  ;; Use sudo
-  (setq system-packages-use-sudo t)
+  ;; Don't use sudo
+  (setq system-packages-use-sudo nil)
   ;; Use apt
   (setq system-packages-package-manager 'apt))
 
