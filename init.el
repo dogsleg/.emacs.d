@@ -975,6 +975,9 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
+;; Enable magit-todos
+(use-package magit-todos)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                    ;;;;
 ;;;; === PROJECTILE === ;;;;
