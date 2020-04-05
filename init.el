@@ -410,6 +410,30 @@
   (setq font-lock-maximum-decoration t)
   (global-font-lock-mode t))
 
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;              ;;;;
+;;;; === ESUP === ;;;;
+;;;;              ;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package esup)
+
+;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                ;;;;
+;;;; === DIMMER === ;;;;
+;;;;                ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Enable dimmer
+(use-package dimmer
+  :config
+  ;; Better handling for which-key
+  (dimmer-configure-which-key)
+  ;; Better handling for org
+  (dimmer-configure-org)
+  ;; Enable by default
+  (dimmer-mode t))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === ASYNC === ;;;;
