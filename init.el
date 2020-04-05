@@ -1079,6 +1079,9 @@
   ;; Bind a key to run dired-rsync
   (bind-key "C-c C-r" 'dired-rsync dired-mode-map))
 
+;; Enable sxiv
+(use-package sxiv)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                         ;;;;
 ;;;; === SYSTEM-PACKAGES === ;;;;
