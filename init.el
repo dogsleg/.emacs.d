@@ -1227,7 +1227,14 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Load notmuch
-(use-package notmuch)
+(use-package notmuch
+  :config
+  ;; Show newest messages first
+  (setq notmuch-search-oldest-first nil)
+  ;; Display all specified headers by default
+  (setq notmuch-message-headers-visible t)
+  ;; Check signatures automatically
+  (setq notmuch-crypto-process-mime t))
 
 ;; Define saved searches
 (setq notmuch-saved-searches '((:name "unread" :query "tag:inbox AND tag:unread")
