@@ -1239,11 +1239,11 @@
   (setq notmuch-hello-hide-tags '(deleted spam)))
 
 ;; Define saved searches
-(setq notmuch-saved-searches '((:name "unread" :query "tag:inbox AND tag:unread")
-                               (:name "inbox" :query "tag:inbox")
-                               (:name "local" :query "tag:local")
+(setq notmuch-saved-searches '((:name "unread" :query "tag:inbox AND tag:unread" :key "u")
+                               (:name "inbox" :query "tag:inbox" :key "i")
+                               (:name "local" :query "tag:local" :key "l")
                                (:name "debian-mailing-lists" :query "to:lists.debian.org")
-                               (:name "bugs" :query "tag:bugs")))
+                               (:name "bugs" :query "tag:bugs" :key "b")))
 
 ;; Read and verify encrypted and signed MIME messages
 (setq notmuch-crypto-process-mime t)
