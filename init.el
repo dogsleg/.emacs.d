@@ -1234,7 +1234,9 @@
   ;; Display all specified headers by default
   (setq notmuch-message-headers-visible t)
   ;; Check signatures automatically
-  (setq notmuch-crypto-process-mime t))
+  (setq notmuch-crypto-process-mime t)
+  ;; Hide deleted and spam tags
+  (setq notmuch-hello-hide-tags '(deleted spam)))
 
 ;; Define saved searches
 (setq notmuch-saved-searches '((:name "unread" :query "tag:inbox AND tag:unread")
