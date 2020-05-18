@@ -1733,6 +1733,22 @@ See `sort-regexp-fields'."
   :init
   (elpy-enable))
 
+;; Use ipython3 as Python interpreter
+(setq python-shell-interpreter "ipython3")
+
+;; Load ipython3 with some specific options
+(setq python-shell-interpreter-args "--pdb --nosep --classic")
+
+;; Change some regexps to better handling Python interpreter
+(setq python-shell-prompt-regexp ">>> ")
+(setq python-shell-prompt-output-regexp "")
+
+;; Better completion in ipython3
+(setq python-shell-completion-setup-code "from IPython.core.completerlib import module_completion")
+(setq python-shell-completion-module-string-code "';'.join(module_completion('''%s'''))\n")
+(setq python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
+
+
 (add-hook 'python-mode-hook 'fci-mode)
 
 (add-hook 'python-mode-hook
