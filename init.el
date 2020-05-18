@@ -1729,21 +1729,28 @@ See `sort-regexp-fields'."
 
 (defvar python_version_to_use "3")
 
-(add-hook 'python-mode-hook 'auto-complete-mode)
-(add-hook 'python-mode-hook 'jedi:ac-setup)
+(use-package elpy
+  :init
+  (elpy-enable))
+
 (add-hook 'python-mode-hook 'fci-mode)
 
 (add-hook 'python-mode-hook
   (lambda()
+    (setq indent-tabs-mode nil)
     (setq tab-width 4)
-    (setq indent-tabs-mode nil)))
+    (setq python-indent-offset 4)))
 
 ;; Load pi-isort
 (use-package py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
 
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:setup-keys t)
-(setq jedi:complete-on-dot t)
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                 ;;;;
+;;;; === COMPANY === ;;;;
+;;;;                 ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(add-hook 'after-init-hook 'global-company-mode)
 
 ;;; init.el ends here
