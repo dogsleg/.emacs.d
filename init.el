@@ -177,6 +177,10 @@
 (setq display-time-mode t)
 (setq display-time-24hr-format t)
 
+;; Show the time on the status bar in 24 hours format
+(setq display-time-day-and-date t)
+(display-time)
+
 ;; Set frame title format
 (setq frame-title-format  (concat invocation-name "@" system-name ": %b %+%+ %f"))
 
@@ -192,11 +196,6 @@
 
 ;; Enable automatic updating a buffer if a file changes on disk
 (global-auto-revert-mode 1)
-
-;; Show the time on the status bar in 24 hours format
-(setq display-time-24hr-format t)
-(setq display-time-day-and-date t)
-(display-time)
 
 ;; Ask for new line in the end of a file
 (setq require-final-newline 'query)
