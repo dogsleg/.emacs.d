@@ -1385,8 +1385,20 @@
 (global-set-key "\C-cc" 'org-capture)
 (global-set-key "\C-cb" 'org-iswitchb)
 
-;; Set agenda files
-(setq org-agenda-files '("~/Documents/Org/agenda.org"))
+;; Set org directory
+(setq org-directory "~/Documents/org/")
+
+;; Set some org files
+(setq org-agenda-files (list (concat org-directory "agenda.org")))
+(setq org-contacts-files (list (concat org-directory "contacts.org")))
+
+(setq org-agenda-span 10
+      ;; Show starting today, not some particular weekday
+      org-agenda-start-on-weekday nil
+      ;; Show last two days in agenda
+      org-agenda-start-day "-3d"
+      ;; Include dairy entries into agenda
+      org-agenda-include-diary t)
 
 ;; Show ⤵ instead of (...)
 (setq org-ellipsis "⤵")
