@@ -255,6 +255,10 @@
 ;;;;                  ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
+(setq calendar-latitude 56.833333)
+(setq calendar-longitude 60.583333)
+(setq calendar-location-name "Екатеринбург, Россия")
+
 ;; Set start of week to Monday
 (setq calendar-week-start-day 1)
 
@@ -268,14 +272,15 @@
                                  "Октябрь" "Ноябрь" "Декабрь"])
 
 ;; Use Russian words for seasons
-(setq solar-n-hemi-seasons
-      '("Весна" "Лето" "Осень" "Зима"))
+(setq solar-n-hemi-seasons '("Весна" "Лето" "Осень" "Зима"))
 
 ;; Disable holidays that are not relevant for me
-(setq holiday-oriental-holidays nil
-      holiday-bahai-holidays nil
+(setq holiday-general-holidays nil
+      holiday-christian-holidays nil
+      holiday-hebrew-holidays nil
       holiday-islamic-holidays nil
-      holiday-hebrew-holidays nil)
+      holiday-bahai-holidays nil
+      holiday-oriental-holidays nil)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                           ;;;;
