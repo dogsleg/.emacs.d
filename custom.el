@@ -16,7 +16,7 @@
      (:name "local" :query "tag:local")
      (:name "debian-mailing-lists" :query "to:lists.debian.org")
      (:name "bugs" :query "tag:bugs"))))
- '(org-agenda-files (quote ("~/freedom/!org!/agenda.org")))
+ '(org-agenda-files (quote ("~/Documents/Org/agenda.org")))
  '(package-selected-packages
    (quote
     (dh-elpa zzz-to-char ztree vimish-fold use-package undo-tree smex restart-emacs recursive-narrow rainbow-mode rainbow-delimiters powerline paredit org-bullets monokai-theme markdown-mode magit linum-relative iedit ido-vertical-mode ido-ubiquitous ibuffer-vc hydra git-timemachine flycheck fill-column-indicator expand-region eshell-up elfeed discover-my-major beacon async anzu agda2-mode ace-window ace-link))))
