@@ -1380,7 +1380,7 @@
 (global-set-key "\C-cb" 'org-iswitchb)
 
 ;; Set agenda files
-(setq org-agenda-files '("~/Documents/!org!/general.org"))
+(setq org-agenda-files '("~/Documents/!org!/agenda.org"))
 
 ;; Show ⤵ instead of (...)
 (setq org-ellipsis "⤵")
