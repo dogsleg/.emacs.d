@@ -226,7 +226,7 @@
 (setq scroll-conservatively 5)
 
 ;; Use clipboard to copy/paste
-(setq x-select-enable-clipboard t)
+(setq select-enable-clipboard t)
 
 ;; Do not put double space between sentences
 (setq sentence-end-double-space nil)
