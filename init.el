@@ -1377,6 +1377,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (require 'org-install)
+(require 'org-contacts)
 
 ;; Bind some useful keys
 (global-set-key "\C-cl" 'org-store-link)
