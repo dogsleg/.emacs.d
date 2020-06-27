@@ -1006,6 +1006,62 @@
 ;; Enable magit-todos
 (use-package magit-todos)
 
+;; Setup gbp actions
+(defun gbp-buildpackage-pbuilder ()
+  (interactive)
+  (let ((out (outdir))
+	(default-directory (magit-toplevel)))
+    (compile "gbp buildpackage --git-export-dir=../build-area/")))
+
+(defun gbp-buildpackage-sbuild ()
+  (interactive)
+  (let ((out (outdir))
+	(default-directory (magit-toplevel)))
+    (compile "gbp buildpackage --git-tag --git-export-dir=../build-area/ --git-builder=sbuild -A -v -d unstable")))
+
+(defun gbp-dch ()
+  (interactive)
+  (let ((default-directory (magit-toplevel)))
+    (compile "gbp dch --release")))
+
+(defun gbp-tag ()
+  (interactive)
+  (let ((default-directory (magit-toplevel)))
+    (compile "gbp buildpackage --git-tag-only --git-ignore-new")))
+
+(defun gbp-push ()
+  (interactive)
+  (let ((default-directory (magit-toplevel)))
+    (compile "gbp push")))
+
+(defun gbp-pull ()
+  (interactive)
+  (let ((default-directory (magit-toplevel)))
+    (compile "gbp pull")))
+
+(defun dput ()
+  (interactive)
+  (let ((default-directory (outdir)))
+    (compile "dput" t)))
+
+(use-package magit-popup
+  :config
+  (magit-define-popup gbp-popup "git buildpackage"
+    :actions '((?B "gbp-buildpackage via pbuilder" gbp-buildpackage-pbuilder)
+               (?S "gbp-buildpackage via sbuild" gbp-buildpackage-sbuild)
+	       (?d "gbp-dch" gbp-dch)
+	       (?t "gbp-tag" gbp-tag)
+	       (?F "gbp-pull" gbp-pull)
+	       (?P "gbp-push" gbp-push)
+	       (?U "dput" dput))
+    :default-action 'gbp
+    ))
+
+(define-key magit-status-mode-map (kbd "H") 'gbp-popup)
+
+(magit-define-popup-action 'magit-dispatch-popup
+  ?H "git buildpackage" 'gbp-popup ?!)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                    ;;;;
 ;;;; === PROJECTILE === ;;;;
