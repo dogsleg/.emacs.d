@@ -1041,6 +1041,7 @@
          "https://yakking.branchable.com/blog/index.rss"
          "http://feeds.feedburner.com/Phoronix"
          "http://slashdot.org/index.rss"
+         "https://n-o-d-e.net/rss/rss.xml"
          ))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
