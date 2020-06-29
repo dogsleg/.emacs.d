@@ -381,6 +381,22 @@
 ;; Enable imenu support for use-package
 (setq use-package-enable-imenu-support t)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                    ;;;;
+;;;; === ANSI-COLOR === ;;;;
+;;;;                    ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package ansi-color)
+
+;; Support ANSI colors in compilation-mode
+(defun colorize-compilation-buffer ()
+  (toggle-read-only)
+  (ansi-color-apply-on-region compilation-filter-start (point))
+  (toggle-read-only))
+
+(add-hook 'compilation-filter-hook 'colorize-compilation-buffer)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
 ;;;; === ENVIRONMENT === ;;;;
