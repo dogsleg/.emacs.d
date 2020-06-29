@@ -1009,14 +1009,12 @@
 ;; Setup gbp actions
 (defun gbp-buildpackage-pbuilder ()
   (interactive)
-  (let ((out (outdir))
-	(default-directory (magit-toplevel)))
+  (let ((default-directory (magit-toplevel)))
     (compile "gbp buildpackage --git-export-dir=../build-area/")))
 
 (defun gbp-buildpackage-sbuild ()
   (interactive)
-  (let ((out (outdir))
-	(default-directory (magit-toplevel)))
+  (let ((default-directory (magit-toplevel)))
     (compile "gbp buildpackage --git-tag --git-export-dir=../build-area/ --git-builder=sbuild -A -v -d unstable")))
 
 (defun gbp-dch ()
@@ -1288,16 +1286,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Load notmuch
-(use-package notmuch
-  :config
-  ;; Show newest messages first
-  (setq notmuch-search-oldest-first nil)
-  ;; Display all specified headers by default
-  (setq notmuch-message-headers-visible t)
-  ;; Check signatures automatically
-  (setq notmuch-crypto-process-mime t)
-  ;; Hide deleted and spam tags
-  (setq notmuch-hello-hide-tags '("deleted" "spam")))
+(use-package notmuch)
 
 ;; Define saved searches
 (setq notmuch-saved-searches '((:name "unread" :query "tag:inbox AND tag:unread" :key "u")
@@ -1306,8 +1295,26 @@
                                (:name "debian-mailing-lists" :query "to:lists.debian.org")
                                (:name "bugs" :query "tag:bugs" :key "b")))
 
+;; Show newest messages first
+(setq notmuch-search-oldest-first nil)
+
+;; Display all specified headers by default
+(setq notmuch-message-headers-visible t)
+
+;; Check signatures automatically
+(setq notmuch-crypto-process-mime t)
+
+;; Hide deleted and spam tags
+(setq notmuch-hello-hide-tags '("deleted" "spam"))
+
 ;; Read and verify encrypted and signed MIME messages
 (setq notmuch-crypto-process-mime t)
+
+;; Remove messages from inbox to which I replied.
+(setq notmuch-message-replied-tags '("-unread"))
+
+;; Hide text/html parts in multipart-messages by default.
+(setq notmuch-show-all-multipart/alternative-parts nil)
 
 ;; Bind "U" to remove tag unread in search-mode
 (define-key notmuch-search-mode-map "u"
@@ -1348,6 +1355,9 @@
     (interactive (notmuch-search-interactive-region))
     (notmuch-search-tag (list "+deleted" "-inbox") beg end)))
 
+;; Render HTML messages with w3m
+(setq mm-text-html-renderer 'w3m)
+
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
 ;;;; === SMTP === ;;;;
@@ -1373,6 +1383,9 @@
 ;; Define citation format
 (setq message-citation-line-format "%a %d %b %Y @ %R %f:\n")
 (setq message-citation-line-function 'message-insert-formatted-citation-line)
+
+;; Bind C-c C-a to a handy function to add attachment
+(define-key message-mode-map (kbd "C-c C-a") 'mail-add-attachment)
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
