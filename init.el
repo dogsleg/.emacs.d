@@ -1535,8 +1535,8 @@
               (setq TeX-source-correlate-method 'synctex)
               (setq TeX-source-correlate-start-server t)))
 
-;; Use xetex as TeX engine
-(setq-default TeX-engine 'xetex)
+;; Use default TeX engine
+(setq-default TeX-engine 'default)
 
 ;; Revert PDF buffer after successful compilation of TeX file
 (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
