@@ -1515,10 +1515,6 @@
 ;;;;                ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-(setq TeX-auto-save t)
-(setq TeX-parse-self t)
-(setq-default TeX-master nil)
-
 (use-package tex-site
   :mode ("\\.tex\\'" . latex-mode)
   :config
