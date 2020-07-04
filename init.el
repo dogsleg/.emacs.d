@@ -1521,6 +1521,9 @@
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
   (setq-default TeX-master nil)
+  (setq TeX-electric-math (cons "\\(" "\\)"))
+  (setq TeX-electric-sub-and-superscript t)
+  (setq LaTeX-math-menu-unicode t)
   (add-hook 'LaTeX-mode-hook
             (lambda ()
               (rainbow-delimiters-mode)
@@ -1537,6 +1540,10 @@
 ;; Revert PDF buffer after successful compilation of TeX file
 (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
 
+;; Enable LaTeX-math-mode by default
+(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+
+
 ;; Use pdf-tools with AUCTeX
 (add-hook 'LaTeX-mode-hook 'pdf-tools-install)
 (setq TeX-view-program-selection '((output-pdf "pdf-tools"))
@@ -1545,6 +1552,8 @@
 
 ;; Load RefTeX after AUCTeX
 (use-package reftex :after auctex)
+(add-hook 'LaTeX-mode-hook 'turn-on-reftex)
+(setq reftex-plug-into-AUCTeX t)
 
 ;; Prompt for empty optional arguments in cite
 (setq reftex-cite-prompt-optional-args t)
