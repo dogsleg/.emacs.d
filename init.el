@@ -1537,7 +1537,7 @@
 ;; Revert PDF buffer after successful compilation of TeX file
 (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
 
-;; Use pdf-tools with auctex
+;; Use pdf-tools with AUCTeX
 (add-hook 'LaTeX-mode-hook 'pdf-tools-install)
 (setq TeX-view-program-selection '((output-pdf "pdf-tools"))
       TeX-source-correlate-start-server t)
