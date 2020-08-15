@@ -1100,6 +1100,7 @@
          ("http://www.debian.org/News/news" debian)
          ("http://www.debian.org/security/dsa.en.rdf" debian)
          ("https://micronews.debian.org/feeds/feed.rss" debian)
+         ("https://planet.gnu.org/rss20.xml" foss)
          ("http://lwn.net/headlines/rss" foss)
          ("https://opensource.com/feed" foss)
          ("http://planet.fsfe.org/en/rss20.xml" foss)
