@@ -825,29 +825,7 @@
   ("g" text-scale-increase "in")
   ("l" text-scale-decrease "out"))
 
-;; Define hydra to hydra-change transparency of Emacs window
-(defun hydra-transparency-helper (inc)
-  "Increase or decrease the selected frame transparency for INC value."
-  (let* ((alpha (frame-parameter (selected-frame) 'alpha))
-         (next-alpha (cond ((not alpha) 100)
-                           ((> (- alpha inc) 100) 100)
-                           ((< (- alpha inc) 0) 0)
-                           (t (- alpha inc)))))
-    (set-frame-parameter (selected-frame) 'alpha next-alpha)))
-
-(defhydra hydra-transparency (:columns 2)
-  "
-  ALPHA : [ %(frame-parameter nil 'alpha) ]
-  "
-  ("j" (lambda () (interactive) (hydra-transparency-helper +1)) "+ more")
-  ("k" (lambda () (interactive) (hydra-transparency-helper -1)) "- less")
-  ("J" (lambda () (interactive) (hydra-transparency-helper +10)) "++ more")
-  ("K" (lambda () (interactive) (hydra-transparency-helper -10)) "-- less")
-  ("=" (lambda (value) (interactive "nTransparency Value 0 - 100 opaque:")
-         (set-frame-parameter (selected-frame) 'alpha value)) "Set to ?" :color blue))
-
-(bind-key "C-c z" 'hydra-transparency/body)
-
+;; YASnippet hydra
 (defhydra hydra-yasnippet (:color blue)
   "
   ^
