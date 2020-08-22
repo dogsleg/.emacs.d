@@ -1522,7 +1522,6 @@
 ;; Enable LaTeX-math-mode by default
 (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
-
 ;; Use pdf-tools with AUCTeX
 (add-hook 'LaTeX-mode-hook 'pdf-tools-install)
 (setq TeX-view-program-selection '((output-pdf "pdf-tools"))
