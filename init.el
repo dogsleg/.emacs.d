@@ -182,7 +182,7 @@
 (display-time)
 
 ;; Set frame title format
-(setq frame-title-format  (concat invocation-name "@" system-name ": %b %+%+ %f"))
+(setq frame-title-format  (concat invocation-name "@" (system-name) ": %b %+%+ %f"))
 
 ;; Highlight text that matches regular expression (globally)
 (global-hi-lock-mode -1)
