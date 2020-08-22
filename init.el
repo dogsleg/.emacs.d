@@ -447,10 +447,10 @@
 ;; Enable dimmer
 (use-package dimmer
   :config
-  ;; Better handling for which-key
-  (dimmer-configure-which-key)
-  ;; Better handling for org
+  ;; Better handling for some modes
+  (dimmer-configure-hydra)
   (dimmer-configure-org)
+  (dimmer-configure-which-key)
   ;; Enable by default
   (dimmer-mode t))
 
