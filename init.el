@@ -706,18 +706,6 @@
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
-;;;; === POWERLINE === ;;;;
-;;;;                   ;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; Load powerline
-(use-package powerline
-  :config
-  ;; Use default powerline theme
-  (powerline-default-theme))
-
-;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;                   ;;;;
 ;;;; === EYEBROWSE === ;;;;
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
