@@ -1084,26 +1084,6 @@
          "https://n-o-d-e.net/rss/rss.xml"
          ))
 
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-;;;;                     ;;;;
-;;;; === ENGINE-MODE === ;;;;
-;;;;                     ;;;;
-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
-
-;; Load engine-mode
-(use-package engine-mode
-  :config
-  ;; Define DuckDuckGo search engine
-  (defengine duckduckgo
-    "https://duckduckgo.com/?q=%s"
-    :keybinding "d")
-  ;; Define Wikipedia search engine
-  (defengine wikipedia
-    "http://www.wikipedia.org/search-redirect.php?language=en&go=Go&search=%s"
-    :keybinding "w")
-  ;; Enable engine-mode globally
-  (engine-mode t))
-
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === DIRED === ;;;;
