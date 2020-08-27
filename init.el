@@ -1805,7 +1805,6 @@ See `sort-regexp-fields'."
 (setq python-shell-completion-module-string-code "';'.join(module_completion('''%s'''))\n")
 (setq python-shell-completion-string-code "';'.join(get_ipython().Completer.all_completions('''%s'''))\n")
 
-
 (add-hook 'python-mode-hook 'fci-mode)
 
 (add-hook 'python-mode-hook
