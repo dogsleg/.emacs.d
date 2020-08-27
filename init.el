@@ -714,7 +714,7 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Enable eyebrowse
-(eyebrowse-mode t)
+;; (eyebrowse-mode t)
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
