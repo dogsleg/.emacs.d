@@ -60,6 +60,9 @@
 ;;;;               ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Start debug on any error
+(setq debug-on-error t)
+
 ;; Prefer newer bytecode
 (setq load-prefer-newer t)
 
