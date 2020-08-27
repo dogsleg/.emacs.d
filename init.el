@@ -704,8 +704,8 @@
 ;;;;                  ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package flycheck
-  :init (global-flycheck-mode))
+;; (use-package flycheck
+;;   :init (global-flycheck-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
@@ -737,12 +737,12 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Load beacon
-(use-package beacon
-  ;; Do not show beacon in a list of enabled modes
-  :diminish beacon-mode
-  :config
-  ;; Enable beacon mode
-  (beacon-mode 1))
+;; (use-package beacon
+;;   ;; Do not show beacon in a list of enabled modes
+;;   :diminish beacon-mode
+;;   :config
+;;   ;; Enable beacon mode
+;;   (beacon-mode 1))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
