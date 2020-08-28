@@ -965,7 +965,9 @@
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
 ;; Enable magit-todos
-(use-package magit-todos)
+(use-package magit-todos
+  :config
+  (magit-todos-mode))
 
 ;; Setup gbp actions
 (defun gbp-buildpackage-pbuilder ()
