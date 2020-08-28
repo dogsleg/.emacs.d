@@ -898,10 +898,9 @@
 
 ;; Load which-key and diminish it
 (use-package which-key
-  :diminish which-key-mode)
-
-;; Enable which-key
-(which-key-mode)
+  :config
+  ;; Enable which-key
+  (which-key-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                  ;;;;
