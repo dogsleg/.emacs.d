@@ -1015,8 +1015,7 @@
 	       (?F "gbp-pull" gbp-pull)
 	       (?P "gbp-push" gbp-push)
 	       (?U "dput" dput))
-    :default-action 'gbp
-    ))
+    :default-action 'gbp))
 
 (define-key magit-status-mode-map (kbd "H") 'gbp-popup)
 
