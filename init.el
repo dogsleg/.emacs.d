@@ -1040,6 +1040,9 @@
 ;;;;                ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
+;; Load elfeed
+(use-package elfeed)
+
 ;; Define feeds to look up with elfeed
 (setq elfeed-feeds
       '( ("http://planet.debian.org/rss20.xml" debian)
