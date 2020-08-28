@@ -499,24 +499,7 @@
 
 ;; Load beginend
 (use-package beginend
-  :config (beginend-global-mode)
-  :diminish (beginend-bs-mode
-             beginend-compilation-mode
-             beginend-dired-mode
-             beginend-elfeed-search-mode
-             beginend-global-mode
-             beginend-ibuffer-mode
-             beginend-magit-status-mode
-             beginend-message-mode
-             beginend-notmuch-search-mode
-             beginend-occur-mode
-             beginend-org-agenda-mode
-             beginend-org-mode
-             beginend-outline-mode
-             beginend-prodigy-mode
-             beginend-prog-mode
-             beginend-recentf-dialog-mode
-             beginend-vc-dir-mode))
+  :config (beginend-global-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
@@ -726,8 +709,6 @@
 
 ;; Load anzu
 (use-package anzu
-  ;; Do not show anzu in a list of enabled modes
-  :diminish anzu-mode
   :config
   ;; Enable anzu globally
   (global-anzu-mode 1))
@@ -740,8 +721,6 @@
 
 ;; Load beacon
 (use-package beacon
-  ;; Do not show beacon in a list of enabled modes
-  :diminish beacon-mode
   :config
   ;; Enable beacon mode
   (beacon-mode 1))
@@ -754,8 +733,6 @@
 
 ;; Load undo-tree
 (use-package undo-tree
-  ;; Do not show undo-tree in a list of enabled modes
-  :diminish undo-tree-mode
   :config
   ;; Enable undo-tree globally
   (global-undo-tree-mode 1))
@@ -862,9 +839,7 @@
   ;; Set highlight-indentation-face to darker dim grey
   (set-face-background 'highlight-indentation-face "#333333")
   ;; Set highlight-indentation-current-column-face to dim grey
-  (set-face-background 'highlight-indentation-current-column-face "#646464")
-  :diminish (highlight-indentation-mode
-             highlight-indentation-current-column-mode))
+  (set-face-background 'highlight-indentation-current-column-face "#646464"))
 
 ;; Enable highlight-indentation-mode in programming modes
 (add-hook 'prog-mode-hook #'highlight-indentation-mode)
@@ -1387,13 +1362,36 @@
 ;; Load diminish
 (use-package diminish
   :config
-  ;; Show abbreviations instead of some modes
-  (diminish 'auto-revert-mode "♻ ")
-  (diminish 'eldoc-mode "⁈ ")
-  (diminish 'flycheck-mode "↑ ")
-  (diminish 'hungry-delete-mode "☣ ")
-  (diminish 'paredit-mode "() ")
-  (diminish 'rainbow-mode))
+  ;; Diminish various modes
+  (diminish 'anzu-mode)
+  (diminish 'auto-revert-mode)
+  (diminish 'beacon-mode)
+  (diminish 'beginend-bs-mode)
+  (diminish 'beginend-compilation-mode)
+  (diminish 'beginend-dired-mode)
+  (diminish 'beginend-elfeed-search-mode)
+  (diminish 'beginend-global-mode)
+  (diminish 'beginend-ibuffer-mode)
+  (diminish 'beginend-magit-status-mode)
+  (diminish 'beginend-message-mode)
+  (diminish 'beginend-notmuch-search-mode)
+  (diminish 'beginend-occur-mode)
+  (diminish 'beginend-org-agenda-mode)
+  (diminish 'beginend-org-mode)
+  (diminish 'beginend-outline-mode)
+  (diminish 'beginend-prodigy-mode)
+  (diminish 'beginend-prog-mode)
+  (diminish 'beginend-recentf-dialog-mode)
+  (diminish 'beginend-vc-dir-mode)
+  (diminish 'eldoc-mode)
+  (diminish 'flycheck-mode)
+  (diminish 'highlight-indentation-mode)
+  (diminish 'highlight-indentation-current-column-mode)
+  (diminish 'hungry-delete-mode)
+  (diminish 'paredit-mode)
+  (diminish 'rainbow-mode)
+  (diminish 'undo-tree-mode)
+  (diminish 'which-key-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                       ;;;;
