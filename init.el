@@ -1302,7 +1302,7 @@
     (notmuch-search-tag (list "+deleted" "-inbox") beg end)))
 
 ;; Render HTML messages with w3m
-(setq mm-text-html-renderer 'w3m)
+(setq mm-text-html-renderer 'lynx)
 
 ;;;;;;;;;;;;;;;;;;;;;;
 ;;;;              ;;;;
