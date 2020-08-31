@@ -1301,7 +1301,7 @@
     (interactive (notmuch-search-interactive-region))
     (notmuch-search-tag (list "+deleted" "-inbox") beg end)))
 
-;; Render HTML messages with w3m
+;; Render HTML messages with lynx
 (setq mm-text-html-renderer 'lynx)
 
 ;;;;;;;;;;;;;;;;;;;;;;
