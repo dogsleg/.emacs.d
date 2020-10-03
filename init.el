@@ -690,13 +690,26 @@
 (use-package flycheck
   :init (global-flycheck-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                 ;;;;
+;;;; === HELPFUL === ;;;;
+;;;;                 ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package helpful)
+(global-set-key (kbd "C-h f") #'helpful-callable)
+(global-set-key (kbd "C-h v") #'helpful-variable)
+(global-set-key (kbd "C-h k") #'helpful-key)
+(global-set-key (kbd "C-c C-d") #'helpful-at-point)
+(global-set-key (kbd "C-h F") #'helpful-function)
+(global-set-key (kbd "C-h C") #'helpful-command)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
 ;;;; === EYEBROWSE === ;;;;
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Enable eyebrowse
 (use-package eyebrowse
   :config
   (eyebrowse-mode t))
