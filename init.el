@@ -368,7 +368,6 @@
 ;;;;                         ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Enable auth-source-password-store
 (require 'auth-source-pass)
 (auth-source-pass-enable)
 
@@ -378,10 +377,7 @@
 ;;;;                     ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Enable use-package infrastructure
 (require 'use-package)
-
-;; Enable imenu support for use-package
 (setq use-package-enable-imenu-support t)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -447,7 +443,6 @@
 ;;;;                ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Enable dimmer
 (use-package dimmer
   :config
   ;; Better handling for some modes
@@ -463,7 +458,6 @@
 ;;;;               ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load async
 (use-package async
   :config
   ;; Enable asynchronous compilation
@@ -475,7 +469,6 @@
 ;;;;                  ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load bind-key
 (use-package bind-key
   ;; Use C-h B to show a list of user-defined bindings
   :bind ("C-h B" . describe-personal-keybindings))
@@ -486,7 +479,6 @@
 ;;;;                          ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load browse-kill-ring
 (use-package browse-kill-ring
   ;; Set up default keybindings
   :config (browse-kill-ring-default-keybindings))
@@ -497,7 +489,6 @@
 ;;;;                  ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load beginend
 (use-package beginend
   :config (beginend-global-mode))
 
@@ -507,7 +498,6 @@
 ;;;;                ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load eshell
 (use-package eshell
   :config
   (setq eshell-banner-message "" ;; Do not show anything in front of eshell prompt
@@ -533,25 +523,21 @@
                                                     (ring-elements eshell-history-ring))))))
             (local-set-key (kbd "C-c C-h") 'eshell-list-history)))
 
-;; Load eshell-up
 (use-package eshell-up
   :config
   ;; Do not ignore case
   (setq eshell-up-ignore-case nil))
 
-;; Load eshell-bookmark
 (use-package eshell-bookmark
   :config
   ;; Integrate bookmark support to Eshell
   (add-hook 'eshell-mode-hook 'eshell-bookmark-setup))
 
-;; Load eshell-git-prompt
 (use-package eshell-git-prompt
   :config
   ;; Enable powerline theme
   (eshell-git-prompt-use-theme 'powerline))
 
-;; Load eshell-z
 (use-package eshell-z
   :config
   ;; Use eshell-z in eshell
@@ -589,14 +575,12 @@
 ;;;;                 ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load ibuffer
 (use-package ibuffer
   :config
   ;; Do not show empty filter groups
   (setq ibuffer-show-empty-filter-groups nil)
   :bind ("C-x C-b" . ibuffer))
 
-;; Load ibuffer-vc
 (use-package ibuffer-vc
   :config
   (add-hook 'ibuffer-hook
@@ -625,7 +609,6 @@
 ;;;;             ;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 
-;; Load ido
 (use-package ido
   :config
   (ido-mode t)
@@ -633,19 +616,16 @@
   (setq ido-enable-flex-matching t)
   (setq ido-use-faces t))
 
-;; Load smex
 (use-package smex
   :bind ("M-x" . smex)
   :config
   (smex-initialize))
 
-;; Load ido-vertical-mode
 (use-package ido-vertical-mode
   :config
   (ido-vertical-mode 1)
   (setq ido-vertical-define-keys 'C-n-and-C-p-only))
 
-;; Load ido-ubiquitous
 (use-package ido-completing-read+
   :config
   (ido-ubiquitous-mode 1))
@@ -667,7 +647,6 @@
 ;;;;               ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load iedit
 (use-package iedit)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -676,7 +655,6 @@
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load move-text
 (use-package move-text
   ;; Use the default bindings
   :init (move-text-default-bindings))
@@ -720,7 +698,6 @@
 ;;;;              ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load anzu
 (use-package anzu
   :config
   ;; Enable anzu globally
@@ -732,7 +709,6 @@
 ;;;;                ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load beacon
 (use-package beacon
   :config
   ;; Enable beacon mode
@@ -744,7 +720,6 @@
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load undo-tree
 (use-package undo-tree
   :config
   ;; Enable undo-tree globally
@@ -756,7 +731,6 @@
 ;;;;                     ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load zzz-to-char
 (use-package zzz-to-char
   ;; Bind some keys to use zzz-to-char
   :bind ("C-M-z" . zzz-to-char)
@@ -768,7 +742,6 @@
 ;;;;                       ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load restart-enacs
 (use-package restart-emacs
   ;; Bind a key to restart Emacs
   :bind ("C-x M-c" . restart-emacs))
@@ -779,7 +752,6 @@
 ;;;;                          ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load recursive-narrow
 (use-package recursive-narrow)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -788,7 +760,6 @@
 ;;;;                       ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load expand-region
 (use-package expand-region
   ;; Bind a key to expand region
   :bind ("C-=" . er/expand-region))
@@ -799,7 +770,6 @@
 ;;;;               ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load hydra
 (use-package hydra)
 
 ;; Define hydra to hydra-change font size
@@ -832,7 +802,6 @@
 ;;;;             ;;;;
 ;;;;;;;;;;;;;;;;;;;;;
 
-;; Load fill-column-indicator
 (use-package fill-column-indicator
   :config
   ;; Set column to show fill-column-indicator
@@ -846,7 +815,6 @@
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load highlight-indentation
 (use-package highlight-indentation
   :config
   ;; Set highlight-indentation-face to darker dim grey
@@ -866,7 +834,6 @@
 ;;;;               ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load ztree
 (use-package ztree)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -884,7 +851,6 @@
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load which-key and diminish it
 (use-package which-key
   :config
   ;; Enable which-key
@@ -906,7 +872,6 @@
 ;;;;                ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load paren
 (use-package paren
   :config
   (show-paren-mode t)
@@ -929,7 +894,6 @@
 ;;;;                                                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load avy
 (use-package avy
   :config
   ;; Use default avy settings
@@ -940,18 +904,15 @@
         ("M-g w" . avy-goto-word-0)
         ("M-g e" . avy-goto-word-1))
 
-;; Load ace-link
 (use-package ace-link
   :config
   ;; Use default ace-link settings
   (ace-link-setup-default))
 
-;; Load ace-window
 (use-package ace-window
   ;; Bind a key to change windows with ace-window
   :bind ("M-g z" . ace-window))
 
-;; Load ace-popup-menu
 (use-package ace-popup-menu
   :config (ace-popup-menu-mode 1))
 
@@ -961,7 +922,6 @@
 ;;;;                     ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load vimish-fold
 (use-package vimish-fold
   ;; Bind keys to fold/unfold using vimish-fold
   :bind ("M-g v f" . vimish-fold)
@@ -977,7 +937,6 @@
 (global-set-key (kbd "C-x g") 'magit-status)
 (global-set-key (kbd "C-x M-g") 'magit-dispatch-popup)
 
-;; Enable magit-todos
 (use-package magit-todos
   :config
   (magit-todos-mode))
@@ -1041,7 +1000,6 @@
 ;;;;                    ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load projectile
 (use-package projectile
   :config (projectile-mode +1)
   ;; Bind key to projectile-command-map
@@ -1053,7 +1011,6 @@
 ;;;;                ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load elfeed
 (use-package elfeed)
 
 ;; Define feeds to look up with elfeed
@@ -1114,17 +1071,14 @@
 ;; Automatic refresh dired when file changes
 (add-hook 'dired-mode-hook 'auto-revert-mode)
 
-;; Load dired-quick-sort
 (use-package dired-quick-sort)
 (dired-quick-sort-setup)
 
-;; Load dired-rsync
 (use-package dired-rsync
   :config
   ;; Bind a key to run dired-rsync
   (bind-key "C-c C-r" 'dired-rsync dired-mode-map))
 
-;; Enable sxiv
 (use-package sxiv)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
@@ -1133,7 +1087,6 @@
 ;;;;                         ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Enable system-packages
 (use-package system-packages
   :config
   ;; Don't use sudo
@@ -1244,7 +1197,6 @@
 ;;;;                 ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load notmuch
 (use-package notmuch)
 
 ;; Define saved searches
@@ -1360,7 +1312,6 @@
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load dumb-jump
 (use-package dumb-jump
   :config
   ;; Enable dumb-jump
@@ -1376,7 +1327,6 @@
 ;;;;                  ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load diminish
 (use-package diminish
   :config
   ;; Diminish various modes
@@ -1529,7 +1479,6 @@
 ;;;;                   ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load yasnippet
 (use-package yasnippet
   ;; Enable yasnippet globally
   :config (yas-global-mode 1)
@@ -1678,7 +1627,6 @@ See `sort-regexp-fields'."
 ;;;;                    ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load whitespace
 (use-package whitespace)
 
 ;; Delete trailing whitespaces on file write
@@ -1730,7 +1678,6 @@ See `sort-regexp-fields'."
 ;;;;                ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-;; Load ediprolog
 (use-package ediprolog
   :bind ("<f11>" . ediprolog-dwim))
 
@@ -1829,7 +1776,6 @@ See `sort-regexp-fields'."
     (setq tab-width 4)
     (setq python-indent-offset 4)))
 
-;; Load pi-isort
 (use-package py-isort)
 (add-hook 'before-save-hook 'py-isort-before-save)
 
