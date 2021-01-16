@@ -1019,6 +1019,7 @@
          ("http://www.debian.org/News/news" debian)
          ("http://www.debian.org/security/dsa.en.rdf" debian)
          ("https://micronews.debian.org/feeds/feed.rss" debian)
+         ("https://udd.debian.org/dmd/?email1=dogsleg%40debian.org&email2=&email3=&packages=&ignpackages=&format=rss#todo" debian)
          ("https://planet.gnu.org/rss20.xml" foss)
          ("http://lwn.net/headlines/rss" foss)
          ("https://opensource.com/feed" foss)
