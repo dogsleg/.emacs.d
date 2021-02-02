@@ -1011,7 +1011,10 @@
 ;;;;                ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package elfeed)
+(use-package elfeed
+  :config
+  (setq elfeed-search-title-max-width 140)
+  (setq elfeed-search-title-min-width 32))
 
 ;; Define feeds to look up with elfeed
 (setq elfeed-feeds
