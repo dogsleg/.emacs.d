@@ -1041,7 +1041,10 @@
 ;;;;                ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package elpher)
+(use-package elpher
+  :bind (:map elpher-mode-map
+              ("n" . elpher-next-link)
+              ("p" . elpher-prev-link)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
