@@ -428,7 +428,7 @@
   :config
   (setq dictionary-server "localhost")
   (setq dictionary-tooltip-dictionary "mueller7")
-  :bind ("C-c C-s" . dictionary-search))
+  :bind ("<f9>" . dictionary-search))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
