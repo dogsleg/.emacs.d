@@ -418,6 +418,18 @@
 (unless (server-running-p)
   (server-start))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                    ;;;;
+;;;; === DICTIONARY === ;;;;
+;;;;                    ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package dictionary
+  :config
+  (setq dictionary-server "localhost")
+  (setq dictionary-tooltip-dictionary "mueller7")
+  :bind ("C-c C-s" . dictionary-search))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
 ;;;; === FONT-LOCK === ;;;;
@@ -1032,6 +1044,7 @@
          ("http://feeds.feedburner.com/rus-linux/VAK" ru-foss)
          ("http://zenway.ru/feed" ru-foss)
          ("http://urfu.ru/ru/?type=2" ekb)
+         ("https://dailynous.com/feed/" philosophy)
          "https://yakking.branchable.com/blog/index.rss"
          "http://feeds.feedburner.com/Phoronix"
          "http://slashdot.org/index.rss"
