@@ -890,6 +890,9 @@
 ;; Enable automatic parens pairing
 (electric-pair-mode 1)
 
+;; Enable rainbow-delimiters
+(use-package rainbow-delimiters)
+
 ;; Use colorful parens in all programming modes
 (add-hook 'prog-mode-hook #'rainbow-delimiters-mode)
 
