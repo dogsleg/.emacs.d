@@ -469,10 +469,7 @@
 ;;;;               ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package async
-  :config
-  ;; Enable asynchronous compilation
-  (async-bytecomp-package-mode 1))
+(use-package async)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                  ;;;;
