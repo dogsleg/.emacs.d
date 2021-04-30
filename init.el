@@ -665,7 +665,8 @@
 
 (use-package move-text
   ;; Use the default bindings
-  :init (move-text-default-bindings))
+  :config
+  (move-text-default-bindings))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                  ;;;;
