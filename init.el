@@ -1467,7 +1467,6 @@
   (setq LaTeX-math-menu-unicode t)
   (add-hook 'LaTeX-mode-hook
             (lambda ()
-              (rainbow-delimiters-mode)
               (turn-on-reftex)
               (setq reftex-plug-into-AUCTeX t)
               (reftex-isearch-minor-mode)
