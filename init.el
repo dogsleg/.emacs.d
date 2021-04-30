@@ -675,7 +675,8 @@
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
 (use-package flycheck
-  :init (global-flycheck-mode))
+  :config
+  (global-flycheck-mode))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                 ;;;;
