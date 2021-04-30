@@ -120,15 +120,6 @@
 (if (file-exists-p custom-file)
     (load-file custom-file))
 
-;;;;;;;;;;;;;;;;;;;;;;;
-;;;;               ;;;;
-;;;; === THEME === ;;;;
-;;;;               ;;;;
-;;;;;;;;;;;;;;;;;;;;;;;
-
-;; Load my favorite theme
-(load-theme 'monokai)
-
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                 ;;;;
 ;;;; === BROWSER === ;;;;
@@ -378,6 +369,16 @@
 
 (require 'use-package)
 (setq use-package-enable-imenu-support t)
+
+;;;;;;;;;;;;;;;;;;;;;;;
+;;;;               ;;;;
+;;;; === THEME === ;;;;
+;;;;               ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;
+
+;; Load my favorite theme
+(use-package monokai-theme)
+(load-theme 'monokai)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                    ;;;;
