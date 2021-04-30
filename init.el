@@ -377,7 +377,6 @@
 ;;;;;;;;;;;;;;;;;;;;;;;
 
 ;; Load my favorite theme
-(use-package monokai-theme)
 (load-theme 'monokai)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
