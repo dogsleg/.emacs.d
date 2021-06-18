@@ -36,7 +36,7 @@
 ;;; Code:
 
 ;; Disable garbage collection during the startup time
-(setq gc-cons-threshold 536870912
+(setq gc-cons-threshold most-positive-fixnum
       gc-cons-percentage 0.6)
 
 (add-hook 'after-init-hook (lambda ()
