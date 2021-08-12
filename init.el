@@ -1612,6 +1612,17 @@
  ("C-x 2" . vsplit-switch)
  ("C-x 3" . hsplit-switch))
 
+;; Bind keys to fast switch between buffers just like in WM
+(global-set-key (kbd "<C-tab>")
+                (lambda ()
+                  (interactive)
+                  (other-window 1 nil)))
+
+(global-set-key (kbd "<C-iso-lefttab>")
+                (lambda ()
+                  (interactive)
+                  (other-window -1 nil)))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === ALIGN === ;;;;
