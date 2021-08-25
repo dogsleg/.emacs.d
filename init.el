@@ -1711,6 +1711,14 @@ See `sort-regexp-fields'."
 ;; *.epub files are to open in nov-mode
 (add-to-list 'auto-mode-alist '("\\.epub\\'" . nov-mode))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                  ;;;;
+;;;; === MARKDOWN === ;;;;
+;;;;                  ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package markdown-toc)
+
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
 ;;;; === PROLOG === ;;;;
