@@ -1226,7 +1226,10 @@
 ;;;;                 ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(use-package notmuch)
+(use-package notmuch
+  :config
+  ;; Send mail with notmuch by default
+  (setq mail-user-agent 'notmuch-user-agent))
 
 ;; Define saved searches
 (setq notmuch-saved-searches '((:name "unread" :query "tag:inbox AND tag:unread" :key "u")
