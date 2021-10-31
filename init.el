@@ -1046,6 +1046,7 @@
          ("http://zenway.ru/feed" ru-foss)
          ("http://urfu.ru/ru/?type=2" ekb)
          ("https://dailynous.com/feed/" philosophy)
+         ("https://plato.stanford.edu/rss/sep.xml" philosophy)
          "https://yakking.branchable.com/blog/index.rss"
          "http://feeds.feedburner.com/Phoronix"
          "http://slashdot.org/index.rss"
