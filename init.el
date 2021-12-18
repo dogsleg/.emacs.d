@@ -1664,6 +1664,21 @@ See `sort-regexp-fields'."
   (interactive "*P\nr")
   (sort-regexp-fields reverse "\\w+" "\\&" begin end))
 
+;;;;;;;;;;;;;;;;;;;;;;
+;;;;              ;;;;
+;;;; === PIYM === ;;;;
+;;;;              ;;;;
+;;;;;;;;;;;;;;;;;;;;;;
+
+;; Enable pyim
+(use-package pyim)
+
+;; Enable pyim-basedict
+(use-package pyim-basedict
+  :config
+  (pyim-basedict-enable))
+
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                    ;;;;
 ;;;; === WHITESPACE === ;;;;
