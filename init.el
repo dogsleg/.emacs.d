@@ -1470,7 +1470,7 @@
   :config
   (setq TeX-auto-save t)
   (setq TeX-parse-self t)
-  (setq-default TeX-master nil)
+  (setq-default TeX-master t)
   (setq TeX-electric-math (cons "\\(" "\\)"))
   (setq TeX-electric-sub-and-superscript t)
   (setq LaTeX-math-menu-unicode t)
