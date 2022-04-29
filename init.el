@@ -1854,4 +1854,17 @@ See `sort-regexp-fields'."
 
 (add-hook 'after-init-hook 'global-company-mode)
 
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                      ;;;;
+;;;; === STARTUP TIME === ;;;;
+;;;;                      ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(defun display-timing ()
+  "Display Emacs load time."
+  (interactive)
+  (message "Emacs loaded in %s" (emacs-init-time)))
+
+(add-hook 'after-init-hook 'display-timing t)
+
 ;;; init.el ends here
