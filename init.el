@@ -1681,6 +1681,8 @@ See `sort-regexp-fields'."
   :config
   (pyim-basedict-enable))
 
+(define-key pyim-mode-map "." 'pyim-page-next-page)
+(define-key pyim-mode-map "," 'pyim-page-previous-page)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                    ;;;;
