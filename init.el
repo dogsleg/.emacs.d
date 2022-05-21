@@ -1029,7 +1029,8 @@
 (use-package elfeed
   :config
   (setq elfeed-search-title-max-width 140)
-  (setq elfeed-search-title-min-width 32))
+  (setq elfeed-search-title-min-width 32)
+  (setq elfeed-user-agent "Mozilla/5.0 (X11; Linux x86_64; rv:100.0) Gecko/20100101 Firefox/100.0"))
 
 ;; Define feeds to look up with elfeed
 (setq elfeed-feeds
