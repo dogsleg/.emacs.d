@@ -161,10 +161,6 @@
 ;; Enable visible bell
 (setq visible-bell t)
 
-;; Set default font
-(add-to-list 'default-frame-alist
-             '(font . "Terminus 11"))
-
 ;; Show column number
 (setq column-number-mode t)
 
