@@ -740,6 +740,7 @@
   :config
   ;; Enable undo-tree globally
   (global-undo-tree-mode 1)
+  ;; Disable saving undo-tree history
   (setq undo-tree-auto-save-history nil))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
