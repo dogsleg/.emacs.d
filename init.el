@@ -739,7 +739,8 @@
 (use-package undo-tree
   :config
   ;; Enable undo-tree globally
-  (global-undo-tree-mode 1))
+  (global-undo-tree-mode 1)
+  (setq undo-tree-auto-save-history nil))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                     ;;;;
