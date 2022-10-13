@@ -1322,7 +1322,8 @@
 (use-package smtpmail-async)
 
 ;; Send mails asynchronously
-(setq message-send-mail-function 'async-smtpmail-send-it
+(setq send-mail-function 'async-smtpmail-send-it
+      message-send-mail-function 'async-smtpmail-send-it
       ;; Use ssl
       smtpmail-stream-type 'ssl
       smtpmail-smtp-user "dogsleg"
