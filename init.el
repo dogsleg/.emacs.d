@@ -415,6 +415,25 @@
 (unless (server-running-p)
   (server-start))
 
+;;;;;;;;;;;;;;;;;;;;;;;;;
+;;;;                 ;;;;
+;;;; === DESKTOP === ;;;;
+;;;;                 ;;;;
+;;;;;;;;;;;;;;;;;;;;;;;;;
+
+(use-package desktop)
+
+(if (not (daemonp))
+    (desktop-save-mode nil)
+  (defun restore-desktop (frame)
+    "Restores desktop and cancels hook after first frame opens.
+     So the daemon can run at startup and it'll still work"
+    (with-selected-frame frame
+      (desktop-save-mode nil)
+      (desktop-read)
+      (remove-hook 'after-make-frame-functions 'restore-desktop)))
+  (add-hook 'after-make-frame-functions 'restore-desktop))
+
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                    ;;;;
 ;;;; === DICTIONARY === ;;;;
