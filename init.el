@@ -1344,11 +1344,15 @@
 (setq send-mail-function 'async-smtpmail-send-it
       message-send-mail-function 'async-smtpmail-send-it
       ;; Use ssl
-      smtpmail-stream-type 'ssl
+      ; smtpmail-stream-type 'ssl
+      smtpmail-stream-type 'starttls
       smtpmail-smtp-user "dogsleg"
-      smtpmail-default-smtp-server "mail.riseup.net"
-      smtpmail-smtp-server "mail.riseup.net"
-      smtpmail-smtp-service 465
+      ; smtpmail-default-smtp-server "mail.riseup.net"
+      smtpmail-default-smtp-server "mail-submit.debian.org"
+      ; smtpmail-smtp-server "mail.riseup.net"
+      smtpmail-smtp-server "mail-submit.debian.org"
+      ; smtpmail-smtp-service 465
+      smtpmail-smtp-service 587
       ;; Enable debugging
       smtpmail-debug-info t)
 
