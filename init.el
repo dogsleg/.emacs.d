@@ -1072,11 +1072,14 @@
          ("http://feeds.feedburner.com/org/LOR" ru-foss)
          ("http://feeds.feedburner.com/rus-linux/VAK" ru-foss)
          ("http://zenway.ru/feed" ru-foss)
-         ("http://urfu.ru/ru/?type=2" ekb)
+         ("http://urfu.ru/ru/?type=2" urfu)
+         ("https://urgi.urfu.ru/ru/?type=2" urfu)
          ("https://dailynous.com/feed/" philosophy)
          ("https://plato.stanford.edu/rss/sep.xml" philosophy)
          ("https://www.apaonline.org/resource/rss/news.rss" philosophy)
          ("http://www.aphex.it/index.php?&Rss=507D0105220202755272" philosophy)
+         ("https://api.quantamagazine.org/feed/" science)
+         ("https://lawrencecpaulson.github.io/feed.xml" science)
          "https://yakking.branchable.com/blog/index.rss"
          "http://feeds.feedburner.com/Phoronix"
          "http://slashdot.org/index.rss"
