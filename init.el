@@ -526,7 +526,7 @@
 (use-package eshell
   :config
   (setq eshell-banner-message "" ;; Do not show anything in front of eshell prompt
-        eshell-history-size 1024 ;; History size
+        eshell-history-size 4096 ;; History size
         eshell-hist-ignoredups t ;; Ignore duplicates
         eshell-scroll-to-bottom-on-input 'all))
 
