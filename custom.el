@@ -14,7 +14,7 @@
      (:name "debian-mailing-lists" :query "to:lists.debian.org")
      (:name "bugs" :query "tag:bugs")))
  '(package-selected-packages
-   '(dh-elpa zzz-to-char ztree vimish-fold use-package undo-tree smex restart-emacs recursive-narrow rainbow-mode rainbow-delimiters powerline paredit org-bullets monokai-theme markdown-mode magit linum-relative iedit ido-vertical-mode ido-ubiquitous ibuffer-vc hydra git-timemachine flycheck fill-column-indicator expand-region eshell-up elfeed discover-my-major beacon async anzu agda2-mode ace-window ace-link))
+   '(org-contacts dh-elpa zzz-to-char ztree vimish-fold use-package undo-tree smex restart-emacs recursive-narrow rainbow-mode rainbow-delimiters powerline paredit org-bullets monokai-theme markdown-mode magit linum-relative iedit ido-vertical-mode ido-ubiquitous ibuffer-vc hydra git-timemachine flycheck fill-column-indicator expand-region eshell-up elfeed discover-my-major beacon async anzu agda2-mode ace-window ace-link))
  '(warning-suppress-types '((comp) (comp) (comp))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
