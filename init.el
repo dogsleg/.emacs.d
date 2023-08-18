@@ -1449,7 +1449,7 @@
 ;;;;                  ;;;;
 ;;;;;;;;;;;;;;;;;;;;;;;;;;
 
-(require 'org-install)
+;; (require 'org-install)
 (require 'org-contacts)
 
 ;; Bind some useful keys
