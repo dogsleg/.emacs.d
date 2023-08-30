@@ -1281,8 +1281,8 @@
 ;; Check signatures automatically
 (setq notmuch-crypto-process-mime t)
 
-;; Hide deleted and spam tags
-(setq notmuch-hello-hide-tags '("deleted" "spam"))
+;; Hide deleted tag
+(setq notmuch-hello-hide-tags '("deleted"))
 
 ;; Read and verify encrypted and signed MIME messages
 (setq notmuch-crypto-process-mime t)
@@ -1299,31 +1299,6 @@
     "Remove unread tag"
     (interactive (notmuch-search-interactive-region))
     (notmuch-search-remove-tag (list "-unread") beg end)))
-
-;; Bind "S" to tag as spam in search-mode
-(define-key notmuch-search-mode-map "S"
-  (lambda (&optional beg end)
-    "Tag thread as spam"
-    (interactive (notmuch-search-interactive-region))
-    (notmuch-search-tag (list "+spam" "-inbox") beg end)))
-
-;; Bind "S" to toggle spam tag in show-mode
-(define-key notmuch-show-mode-map "S"
-  (lambda ()
-    "Toggle spam tag for message"
-    (interactive)
-    (if (member "deleted" (notmuch-show-get-tags))
-        (notmuch-show-tag (list "-spam"))
-      (notmuch-show-tag (list "+spam")))))
-
-;; Bind "d" to toggle deleted tag in show-mode
-(define-key notmuch-show-mode-map "d"
-  (lambda ()
-    "Toggle deleted tag for message"
-    (interactive)
-    (if (member "deleted" (notmuch-show-get-tags))
-        (notmuch-show-tag (list "-deleted"))
-      (notmuch-show-tag (list "+deleted")))))
 
 ;; Bind "D" to tag as deleted in search-mode
 (define-key notmuch-search-mode-map "D"
