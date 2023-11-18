@@ -1464,12 +1464,16 @@
 ;; Do not DONE supertask in case there are still any TODO subtask
 (setq org-enforce-todo-dependencies t)
 
+;; Enable org-bullets
 (use-package org-bullets
   :config
   ;; Enable org-bullets in org-mode
   (add-hook 'org-mode-hook (lambda () (org-bullets-mode 1)))
   ;; Use these cool bullets to mark levels
   (setq org-bullets-bullet-list '("⊢" "⋮" "⋱" "⸳")))
+
+;; Enable org-roam
+(use-package org-roam)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                ;;;;
@@ -1495,20 +1499,20 @@
               (setq TeX-source-correlate-method 'synctex)
               (setq TeX-source-correlate-start-server t)))
 
-;; Use default TeX engine
-(setq-default TeX-engine 'default)
+  ;; Use default TeX engine
+  (setq-default TeX-engine 'default)
 
-;; Revert PDF buffer after successful compilation of TeX file
-(add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
+  ;; Revert PDF buffer after successful compilation of TeX file
+  (add-hook 'TeX-after-compilation-finished-functions #'TeX-revert-document-buffer)
 
-;; Enable LaTeX-math-mode by default
-(add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
+  ;; Enable LaTeX-math-mode by default
+  (add-hook 'LaTeX-mode-hook 'LaTeX-math-mode)
 
-;; Use pdf-tools with AUCTeX
-(add-hook 'LaTeX-mode-hook 'pdf-tools-install)
-(setq TeX-view-program-selection '((output-pdf "pdf-tools"))
-      TeX-source-correlate-start-server t)
-(setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view"))))
+  ;; Use pdf-tools with AUCTeX
+  (add-hook 'LaTeX-mode-hook 'pdf-tools-install)
+  (setq TeX-view-program-selection '((output-pdf "pdf-tools"))
+        TeX-source-correlate-start-server t)
+  (setq TeX-view-program-list '(("pdf-tools" "TeX-pdf-tools-sync-view"))))
 
 ;; Load RefTeX after AUCTeX
 (use-package reftex :after auctex)
