@@ -1080,6 +1080,7 @@
          ("http://www.aphex.it/index.php?&Rss=507D0105220202755272" philosophy)
          ("https://api.quantamagazine.org/feed/" science)
          ("https://lawrencecpaulson.github.io/feed.xml" science)
+         ("https://talks.cam.ac.uk/show/rss/164015" science)
          "https://yakking.branchable.com/blog/index.rss"
          "http://feeds.feedburner.com/Phoronix"
          "http://slashdot.org/index.rss"
