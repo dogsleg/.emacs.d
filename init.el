@@ -1143,7 +1143,7 @@
   ;; Bind a key to run dired-rsync
   (bind-key "C-c C-r" 'dired-rsync dired-mode-map))
 
-(use-package sxiv)
+;; (use-package sxiv)
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                         ;;;;
