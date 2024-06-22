@@ -54,6 +54,9 @@
 (setq user-full-name "Lev Lamberov"
       user-mail-address "dogsleg@debian.org")
 
+(add-to-list 'default-frame-alist
+             '(font . "Terminus (TTF) Medium 12"))
+
 ;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;               ;;;;
 ;;;; === BASIC === ;;;;
