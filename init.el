@@ -1123,14 +1123,20 @@
 ;; Do not hide symbolic link targets
 (setq dired-hide-details-hide-symlink-targets nil)
 
+;; Ignore Case Order
+(setq ls-lisp-ignore-case t)
+
+;; Make dired use the same buffer for viewing directory
+(setq dired-kill-when-opening-new-dired-buffer t)
+
 ;; Always copy recursively
 (setq dired-recursive-copies 'always)
 
 ;; Define programs to open specific files
 (setq dired-open-extensions
       '(("djvu" . "zathura")
-        ("mkv" . "mplayer")
-        ("avi" . "mplayer")))
+        ("mkv" . "mpv")
+        ("avi" . "mpv")))
 
 ;; Automatic refresh dired when file changes
 (add-hook 'dired-mode-hook 'auto-revert-mode)
@@ -1203,29 +1209,16 @@
 ;; Show line numbers (globally)
 (global-display-line-numbers-mode)
 
-;; Disable display-line-numbers-mode in pdf-tools-mode
-(add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
-
-;; Disable display-line-numbers-mode in eshell
+;; Disable display-line-numbers-mode in several modes
 (add-hook 'eshell-mode-hook (lambda () (display-line-numbers-mode -1)))
-
-;; Disable display-line-numbers-mode in EWW
 (add-hook 'eww-after-render-hook (lambda () (display-line-numbers-mode -1)))
-
-;; Disable display-line-numbers-mode in notmuch-hello
+(add-hook 'dired-mode-hook (lambda () (display-line-numbers-mode -1)))
 (add-hook 'notmuch-hello-mode-hook (lambda () (display-line-numbers-mode -1)))
-
-;; Disable display-line-numbers-mode in notmuch-search
 (add-hook 'notmuch-search-mode-hook (lambda () (display-line-numbers-mode -1)))
-
-;; Disable display-line-numbers-mode in notmuch-show
 (add-hook 'notmuch-show-mode-hook (lambda () (display-line-numbers-mode -1)))
-
-;; Disable display-line-numbers-mode in org-mode
-(add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
-
-;; Disable display-line-numbers-mode in nov
 (add-hook 'nov-mode-hook (lambda () (display-line-numbers-mode -1)))
+(add-hook 'org-mode-hook (lambda () (display-line-numbers-mode -1)))
+(add-hook 'pdf-view-mode-hook (lambda () (display-line-numbers-mode -1)))
 
 ;;;;;;;;;;;;;;;;;;;;;;;;;;;
 ;;;;                   ;;;;
